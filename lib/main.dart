@@ -292,12 +292,12 @@ class EsasEkran extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final kartlar = [
-      {'ad': L.t('personal'), 'alt': L.t('personal_d'), 'ikon': Icons.auto_awesome, 'rəng': C.qirmizi},
-      {'ad': L.t('compat'), 'alt': L.t('compat_d'), 'ikon': Icons.favorite, 'rəng': C.qirmiziAcik},
-      {'ad': L.t('tarot'), 'alt': L.t('tarot_d'), 'ikon': Icons.style, 'rəng': C.qizil},
-      {'ad': L.t('reml'), 'alt': L.t('reml_d'), 'ikon': Icons.grid_on, 'rəng': C.qirmizi},
-      {'ad': L.t('position'), 'alt': L.t('position_d'), 'ikon': Icons.place, 'rəng': C.qirmiziAcik},
-      {'ad': L.t('reference'), 'alt': L.t('reference_d'), 'ikon': Icons.menu_book, 'rəng': C.qizil},
+      {'ad': L.t('personal'), 'alt': L.t('personal_d'), 'ikon': Icons.auto_awesome, 'reng': C.qirmizi},
+      {'ad': L.t('compat'), 'alt': L.t('compat_d'), 'ikon': Icons.favorite, 'reng': C.qirmiziAcik},
+      {'ad': L.t('tarot'), 'alt': L.t('tarot_d'), 'ikon': Icons.style, 'reng': C.qizil},
+      {'ad': L.t('reml'), 'alt': L.t('reml_d'), 'ikon': Icons.grid_on, 'reng': C.qirmizi},
+      {'ad': L.t('position'), 'alt': L.t('position_d'), 'ikon': Icons.place, 'reng': C.qirmiziAcik},
+      {'ad': L.t('reference'), 'alt': L.t('reference_d'), 'ikon': Icons.menu_book, 'reng': C.qizil},
     ];
 
     return Scaffold(
@@ -350,7 +350,7 @@ class EsasEkran extends StatelessWidget {
                   ad: k['ad'] as String,
                   alt: k['alt'] as String,
                   ikon: k['ikon'] as IconData,
-                  rəng: k['rəng'] as Color,
+                  reng: k['reng'] as Color,
                   onTap: () => _ac(ctx, i),
                 );
               },
@@ -378,9 +378,9 @@ class EsasEkran extends StatelessWidget {
 class _Kart extends StatefulWidget {
   final String ad, alt;
   final IconData ikon;
-  final Color rəng;
+  final Color reng;
   final VoidCallback onTap;
-  const _Kart({required this.ad, required this.alt, required this.ikon, required this.rəng, required this.onTap});
+  const _Kart({required this.ad, required this.alt, required this.ikon, required this.reng, required this.onTap});
 
   @override
   State<_Kart> createState() => _KartState();
@@ -407,15 +407,15 @@ class _KartState extends State<_Kart> {
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
-              _basildi ? widget.rəng.withOpacity(0.3) : C.tundQara,
+              _basildi ? widget.reng.withOpacity(0.3) : C.tundQara,
               C.qara,
             ],
           ),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: widget.rəng.withOpacity(_basildi ? 1 : 0.4), width: 1.5),
+          border: Border.all(color: widget.reng.withOpacity(_basildi ? 1 : 0.4), width: 1.5),
           boxShadow: _basildi
-              ? [BoxShadow(color: widget.rəng.withOpacity(0.4), blurRadius: 20, spreadRadius: 2)]
-              : [BoxShadow(color: widget.rəng.withOpacity(0.1), blurRadius: 10)],
+              ? [BoxShadow(color: widget.reng.withOpacity(0.4), blurRadius: 20, spreadRadius: 2)]
+              : [BoxShadow(color: widget.reng.withOpacity(0.1), blurRadius: 10)],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -424,10 +424,10 @@ class _KartState extends State<_Kart> {
               width: 48, height: 48,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: widget.rəng.withOpacity(0.15),
-                border: Border.all(color: widget.rəng.withOpacity(0.5)),
+                color: widget.reng.withOpacity(0.15),
+                border: Border.all(color: widget.reng.withOpacity(0.5)),
               ),
-              child: Icon(widget.ikon, color: widget.rəng, size: 26),
+              child: Icon(widget.ikon, color: widget.reng, size: 26),
             ),
             const Spacer(),
             Text(widget.ad, style: const TextStyle(color: C.ag, fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.5)),
@@ -443,8 +443,8 @@ class _KartState extends State<_Kart> {
 class _SehifePlaceholder extends StatelessWidget {
   final String ad;
   final IconData ikon;
-  final Color rəng;
-  const _SehifePlaceholder({required this.ad, required this.ikon, required this.rəng});
+  final Color reng;
+  const _SehifePlaceholder({required this.ad, required this.ikon, required this.reng});
 
   @override
   Widget build(BuildContext context) {
@@ -461,8 +461,8 @@ class _SehifePlaceholder extends StatelessWidget {
           children: [
             Container(
               width: 100, height: 100,
-              decoration: BoxDecoration(shape: BoxShape.circle, color: rəng.withOpacity(0.15), border: Border.all(color: rəng, width: 2)),
-              child: Icon(ikon, color: rəng, size: 50),
+              decoration: BoxDecoration(shape: BoxShape.circle, color: reng.withOpacity(0.15), border: Border.all(color: reng, width: 2)),
+              child: Icon(ikon, color: reng, size: 50),
             ),
             const SizedBox(height: 24),
             Text(ad, style: const TextStyle(color: C.ag, fontSize: 22, fontWeight: FontWeight.bold)),
@@ -478,35 +478,35 @@ class _SehifePlaceholder extends StatelessWidget {
 class SehifePersonal extends StatelessWidget {
   const SehifePersonal({super.key});
   @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('personal'), ikon: Icons.auto_awesome, rəng: C.qirmizi);
+  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('personal'), ikon: Icons.auto_awesome, reng: C.qirmizi);
 }
 
 class SehifeCompat extends StatelessWidget {
   const SehifeCompat({super.key});
   @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('compat'), ikon: Icons.favorite, rəng: C.qirmiziAcik);
+  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('compat'), ikon: Icons.favorite, reng: C.qirmiziAcik);
 }
 
 class SehifeTarot extends StatelessWidget {
   const SehifeTarot({super.key});
   @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('tarot'), ikon: Icons.style, rəng: C.qizil);
+  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('tarot'), ikon: Icons.style, reng: C.qizil);
 }
 
 class SehifeReml extends StatelessWidget {
   const SehifeReml({super.key});
   @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('reml'), ikon: Icons.grid_on, rəng: C.qirmizi);
+  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('reml'), ikon: Icons.grid_on, reng: C.qirmizi);
 }
 
 class SehifePosition extends StatelessWidget {
   const SehifePosition({super.key});
   @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('position'), ikon: Icons.place, rəng: C.qirmiziAcik);
+  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('position'), ikon: Icons.place, reng: C.qirmiziAcik);
 }
 
 class SehifeReference extends StatelessWidget {
   const SehifeReference({super.key});
   @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('reference'), ikon: Icons.menu_book, rəng: C.qizil);
+  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('reference'), ikon: Icons.menu_book, reng: C.qizil);
 }
