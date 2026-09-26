@@ -12,7 +12,6 @@ class _SehifePersonalState extends State<SehifePersonal> {
   static const tundQara = Color(0xFF1A0000);
   static const qirmizi = Color(0xFFC62828);
   static const qizil = Color(0xFFFFD700);
-  static const boz = Color(0xFF888888);
   static const ag = Colors.white;
 
   final ad = TextEditingController();
@@ -21,60 +20,57 @@ class _SehifePersonalState extends State<SehifePersonal> {
   final il = TextEditingController();
   Map<String, dynamic>? n;
 
-  static final Map<String, int> ebced = {
-    'a': 1, 'e': 1, 'b': 2, 'p': 2, 'c': 3, 'g': 3, 'd': 4,
-    'h': 5, 'v': 6, 'o': 6, 'u': 6, 'z': 7, 'i': 10, 'y': 10,
-    'k': 20, 'l': 30, 'm': 40, 'n': 50, 's': 60, 'f': 80,
-    'q': 100, 'r': 200, 't': 400, 'x': 600,
-    '\u0259': 1, '\u00e7': 3, '\u00f6': 6, '\u00fc': 6,
-    '\u0131': 10, '\u015f': 300, '\u011f': 1000,
+  static final Map<String, int> eb = {
+    'a': 1, 'e': 1, 'b': 2, 'p': 2, 'c': 3, 'g': 3, 'd': 4, 'h': 5,
+    'v': 6, 'o': 6, 'u': 6, 'z': 7, 'i': 10, 'y': 10, 'k': 20, 'l': 30,
+    'm': 40, 'n': 50, 's': 60, 'f': 80, 'q': 100, 'r': 200, 't': 400, 'x': 600,
+    '\u0259': 1, '\u00e7': 3, '\u00f6': 6, '\u00fc': 6, '\u0131': 10, '\u015f': 300, '\u011f': 1000,
   };
 
-  static final Map<String, int> pifaqor = {
+  static final Map<String, int> pf = {
     'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5, 'f': 6, 'g': 7, 'h': 8,
     'i': 9, 'j': 1, 'k': 2, 'l': 3, 'm': 4, 'n': 5, 'o': 6, 'p': 7,
     'q': 8, 'r': 9, 's': 1, 't': 2, 'u': 3, 'v': 4, 'w': 5, 'x': 6,
-    'y': 7, 'z': 8, '\u0259': 5, '\u00e7': 3, '\u00f6': 6,
-    '\u00fc': 3, '\u0131': 9, '\u015f': 1, '\u011f': 7,
+    'y': 7, 'z': 8, '\u0259': 5, '\u00e7': 3, '\u00f6': 6, '\u00fc': 3, '\u0131': 9, '\u015f': 1, '\u011f': 7,
   };
 
-  static final Map<int, String> cifrMena = {
-    1: 'Vahid, Liderlik',
-    2: 'Cutluk, Harmoniya',
-    3: 'Ucluk, Yaradiciliq',
-    4: 'Dordluk, Sabitlik',
-    5: 'Beslik, Deyisim',
-    6: 'Altiliq, Mesuliyyet',
-    7: 'Yeddilik, Mudriklik',
-    8: 'Sekkizlik, Bolluq',
-    9: 'Doqquzluq, Kamillik',
+  static const Map<int, String> cm = {
+    1: 'Vahid, Liderlik', 2: 'Cutluk, Harmoniya', 3: 'Ucluk, Yaradiciliq',
+    4: 'Dordluk, Sabitlik', 5: 'Beslik, Deyisim', 6: 'Altiliq, Mesuliyyet',
+    7: 'Yeddilik, Mudriklik', 8: 'Sekkizlik, Bolluq', 9: 'Doqquzluq, Kamillik',
   };
 
-  int ebcH(String s) {
+  static const List<String> amL = [
+    'Serateyn','Betn','Sureya','Debaran','Heqeh','Henneh','Zire','Nesre',
+    'Terfe','Cebhe','Zubra','Serfe','Ava','Simak','Gafr','Zubana','Iklil','Qelb',
+    'Sovle','Neayim','Belde','SedZabih','SedBula','SedSuud','SedAhbiye',
+    'FergMukdim','FergMuaxir','Risa'
+  ];
+
+  static const List<String> iaL = [
+    'Allah','ər-Rəhmən','ər-Rəhim','əl-Məlik','əl-Quddus','əs-Salam','əl-Mömin',
+    'əl-Muheymin','əl-Əziz','əl-Cəbbar','əl-Mütəkəbbir','əl-Xaliq','əl-Bari',
+    'əl-Musavvir','əl-Ğaffar','əl-Qəhhar','əl-Vəhhab','ər-Rəzzaq','əl-Fəttah',
+    'əl-Alim','əl-Qabid','əl-Basit','əl-Hafid','ər-Rafi','əl-Müzz','əl-Müzill',
+    'əs-Səmi','əl-Bəsir','əl-Həkəm','əl-Adl','əl-Lətif','əl-Xəbir','əl-Həlim'
+  ];
+
+  int ebH(String s) {
     int c = 0; String k = s.toLowerCase();
-    for (int i = 0; i < k.length; i++) {
-      if (ebced.containsKey(k[i])) c += ebced[k[i]]!;
-    }
+    for (int i = 0; i < k.length; i++) { if (eb.containsKey(k[i])) c += eb[k[i]]!; }
     return c;
   }
 
-  int pifH(String s) {
+  int pfH(String s) {
     int c = 0; String k = s.toLowerCase();
-    for (int i = 0; i < k.length; i++) {
-      if (pifaqor.containsKey(k[i])) c += pifaqor[k[i]]!;
-    }
-    while (c > 9 && c != 11 && c != 22 && c != 33) {
-      int y = 0; while (c > 0) { y += c % 10; c ~/= 10; } c = y;
-    }
+    for (int i = 0; i < k.length; i++) { if (pf.containsKey(k[i])) c += pf[k[i]]!; }
+    while (c > 9 && c != 11 && c != 22 && c != 33) { int y = 0; while (c > 0) { y += c % 10; c ~/= 10; } c = y; }
     return c;
   }
 
-  int cifH(int e) {
-    if (e == 0) return 0;
-    int c = e % 9; return c == 0 ? 9 : c;
-  }
+  int cfH(int e) { if (e == 0) return 0; int c = e % 9; return c == 0 ? 9 : c; }
 
-  Map<String, String> burcT(int g, int a) {
+  Map<String, String> bT(int g, int a) {
     if ((a == 3 && g >= 21) || (a == 4 && g <= 19)) return {'ad': 'Qoc', 'p': 'Mars', 'e': 'Od', 's': '\u2648'};
     if ((a == 4 && g >= 20) || (a == 5 && g <= 20)) return {'ad': 'Buga', 'p': 'Venera', 'e': 'Torpaq', 's': '\u2649'};
     if ((a == 5 && g >= 21) || (a == 6 && g <= 20)) return {'ad': 'Ekizler', 'p': 'Merkuri', 'e': 'Hava', 's': '\u264A'};
@@ -89,15 +85,36 @@ class _SehifePersonalState extends State<SehifePersonal> {
     return {'ad': 'Baliq', 'p': 'Neptun', 'e': 'Su', 's': '\u2653'};
   }
 
-  String planetG(DateTime t) {
+  String pG(DateTime t) {
     final c = {7: 'Gunes', 1: 'Ay', 2: 'Mars', 3: 'Merkuri', 4: 'Yupiter', 5: 'Venera', 6: 'Zuhal'};
     return c[t.weekday] ?? 'Gunes';
   }
 
-  String cinB(int i) {
+  String cB(int i) {
     final h = ['Meymun','Xoruz','It','Donuz','Sicovul','Okuz','Peleng','Dovsan','Ejdaha','Ilan','At','Qoyun'];
     return h[i % 12];
   }
+
+  String dk(int g, String b) {
+    int d = g % 30;
+    return b + ' - ' + (d < 10 ? 'Dek1' : (d < 20 ? 'Dek2' : 'Dek3'));
+  }
+
+  String aM(int g, int a) { return amL[((a - 1) * 28 + g - 1) % 28]; }
+
+  String hu(String a) {
+    final m = ['Goz','Qas','Burun','Agiz','Cene','Yanaq','Alin','Sac','Boyun','Goz','Qas','Dil',
+      'Dis','Dodaq','Dodaq','Qulaq','Cenealti','Yanaq','Alin','Sac','Kirpik','Kirpik','Goz qapagi',
+      'Qas arasi','Alin ortasi','Goz alti','Sac uclari','Gizli'];
+    return m[a.length % 28];
+  }
+
+  String vf(int e) {
+    int m = e % 9; if (m == 0) m = 9;
+    return m > 6 ? 'Guclu (' + m.toString() + ')' : (m >= 4 ? 'Orta (' + m.toString() + ')' : 'Zeif (' + m.toString() + ')');
+  }
+
+  String ia(int e) { return iaL[e % 33]; }
 
   void hesabla() {
     if (ad.text.isEmpty || gun.text.isEmpty || ay.text.isEmpty || il.text.isEmpty) {
@@ -105,21 +122,18 @@ class _SehifePersonalState extends State<SehifePersonal> {
         const SnackBar(content: Text('Butun xanalari doldurun!'), backgroundColor: Colors.red));
       return;
     }
-    int g = int.parse(gun.text);
-    int a = int.parse(ay.text);
-    int i = int.parse(il.text);
-
-    int e = ebcH(ad.text);
-    int c = cifH(e);
-    int p = pifH(ad.text);
+    int g = int.parse(gun.text); int a = int.parse(ay.text); int i = int.parse(il.text);
+    int e = ebH(ad.text); int c = cfH(e); int p = pfH(ad.text);
     int r = e % 9; if (r == 0) r = 9;
-    var b = burcT(g, a);
-    String pg = planetG(DateTime(i, a, g));
-    String cb = cinB(i);
-
+    var b = bT(g, a);
     HapticFeedback.mediumImpact();
     setState(() {
-      n = {'ad': ad.text, 'e': e, 'c': c, 'p': p, 'r': r, 'b': b, 'pg': pg, 'cb': cb};
+      n = {
+        'ad': ad.text, 'e': e, 'c': c, 'p': p, 'r': r, 'b': b,
+        'pg': pG(DateTime(i, a, g)), 'cb': cB(i),
+        'dk': dk(g, b['ad']!), 'am': aM(g, a),
+        'hu': hu(ad.text), 'vf': vf(e), 'ia': ia(e),
+      };
     });
   }
 
@@ -178,11 +192,16 @@ class _SehifePersonalState extends State<SehifePersonal> {
           const SizedBox(height: 20),
           if (n != null) ...[
             k('Ad', n!['ad'], ag),
-            k('EBCED', '${n!['e']}', qizil),
-            k('CIFR', '${n!['c']} - ${cifrMena[n!['c']]}', Colors.purpleAccent),
-            k('RUM', '${n!['r']}', Colors.orangeAccent),
-            k('NUMEROLOGIYA', '${n!['p']}', Colors.cyan),
-            k('${n!['b']['s']} BURC', '${n!['b']['ad']}\nPlanet: ${n!['b']['p']}\nElement: ${n!['b']['e']}', Colors.redAccent),
+            k('EBCED', n!['e'].toString(), qizil),
+            k('CIFR', n!['c'].toString() + ' - ' + cm[n!['c']]!, Colors.purpleAccent),
+            k('RUM', n!['r'].toString(), Colors.orangeAccent),
+            k('NUMEROLOGIYA', n!['p'].toString(), Colors.cyan),
+            k('BURC', n!['b']['ad'] + '\nPlanet: ' + n!['b']['p'] + '\nElement: ' + n!['b']['e'], Colors.redAccent),
+            k('DEKANAT', n!['dk'], Colors.tealAccent),
+            k('AY MENZILI', n!['am'], Colors.indigoAccent),
+            k('HURUFILIK', n!['hu'], Colors.pinkAccent),
+            k('VEFQ', n!['vf'], Colors.deepOrangeAccent),
+            k('ISMI-EZEM', n!['ia'], Colors.lightGreenAccent),
             k('PLANET GUNU', n!['pg'], Colors.blueAccent),
             k('CIN BURCU', n!['cb'], Colors.greenAccent),
           ],
