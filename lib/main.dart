@@ -1,3 +1,4 @@
+import 'sehzsi_analiz.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -475,11 +476,6 @@ class _SehifePlaceholder extends StatelessWidget {
   }
 }
 
-class SehifePersonal extends StatelessWidget {
-  const SehifePersonal({super.key});
-  @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('personal'), ikon: Icons.auto_awesome, reng: C.qirmizi);
-}
 
 class SehifeCompat extends StatelessWidget {
   const SehifeCompat({super.key});
