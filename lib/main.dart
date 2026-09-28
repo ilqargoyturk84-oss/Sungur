@@ -1,3 +1,4 @@
+import 'uygunluq.dart';
 import 'sehzsi_analiz.dart';
 
 import 'package:flutter/material.dart';
@@ -477,11 +478,6 @@ class _SehifePlaceholder extends StatelessWidget {
 }
 
 
-class SehifeCompat extends StatelessWidget {
-  const SehifeCompat({super.key});
-  @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('compat'), ikon: Icons.favorite, reng: C.qirmiziAcik);
-}
 
 class SehifeTarot extends StatelessWidget {
   const SehifeTarot({super.key});
