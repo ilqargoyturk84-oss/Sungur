@@ -1,3 +1,6 @@
+import 'movqe.dart';
+import 'reml.dart';
+import 'tarot.dart';
 import 'uygunluq.dart';
 import 'sehzsi_analiz.dart';
 
@@ -479,23 +482,8 @@ class _SehifePlaceholder extends StatelessWidget {
 
 
 
-class SehifeTarot extends StatelessWidget {
-  const SehifeTarot({super.key});
-  @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('tarot'), ikon: Icons.style, reng: C.qizil);
-}
 
-class SehifeReml extends StatelessWidget {
-  const SehifeReml({super.key});
-  @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('reml'), ikon: Icons.grid_on, reng: C.qirmizi);
-}
 
-class SehifePosition extends StatelessWidget {
-  const SehifePosition({super.key});
-  @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('position'), ikon: Icons.place, reng: C.qirmiziAcik);
-}
 
 class SehifeReference extends StatelessWidget {
   const SehifeReference({super.key});
