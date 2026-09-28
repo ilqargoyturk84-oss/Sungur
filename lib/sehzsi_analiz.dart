@@ -192,16 +192,16 @@ class _SehifePersonalState extends State<SehifePersonal> {
           const SizedBox(height: 20),
           if (n != null) ...[
             k('Ad', n!['ad'], ag),
-            k('EBCED', n!['e'].toString(), qizil),
-            k('CIFR', n!['c'].toString() + ' - ' + cm[n!['c']]!, Colors.purpleAccent),
-            k('RUM', n!['r'].toString(), Colors.orangeAccent),
-            k('NUMEROLOGIYA', n!['p'].toString(), Colors.cyan),
-            k('BURC', n!['b']['ad'] + '\nPlanet: ' + n!['b']['p'] + '\nElement: ' + n!['b']['e'], Colors.redAccent),
+            k('EBCED', n!['e'].toString() + '\n' + mE(n!['e']), qizil),
+            k('CIFR', n!['c'].toString() + ' - ' + cm[n!['c']]! + '\n' + mC(n!['c']), Colors.purpleAccent),
+            k('RUM', n!['r'].toString() + '\n' + mR(n!['r']), Colors.orangeAccent),
+            k('NUMEROLOGIYA', n!['p'].toString() + '\n' + mN(n!['p']), Colors.cyan),
+            k('BURC', n!['b']['ad'] + '\nPlanet: ' + n!['b']['p'] + '\nElement: ' + n!['b']['e'] + '\n' + mB(n!['b']['ad']), Colors.redAccent),
             k('DEKANAT', n!['dk'], Colors.tealAccent),
-            k('AY MENZILI', n!['am'], Colors.indigoAccent),
-            k('HURUFILIK', n!['hu'], Colors.pinkAccent),
-            k('VEFQ', n!['vf'], Colors.deepOrangeAccent),
-            k('ISMI-EZEM', n!['ia'], Colors.lightGreenAccent),
+            k('AY MENZILI', n!['am'] + '\n' + mAm(n!['am']), Colors.indigoAccent),
+            k('HURUFILIK', n!['hu'] + '\n' + mHu(n!['hu']), Colors.pinkAccent),
+            k('VEFQ', n!['vf'] + '\n' + mV(n!['e']), Colors.deepOrangeAccent),
+            k('ISMI-EZEM', n!['ia'] + '\n' + mIa(n!['ia']), Colors.lightGreenAccent),
             k('PLANET GUNU', n!['pg'], Colors.blueAccent),
             k('CIN BURCU', n!['cb'], Colors.greenAccent),
           ],
@@ -210,3 +210,25 @@ class _SehifePersonalState extends State<SehifePersonal> {
     );
   }
 }
+
+String mE(int e) => 'Adinizin mistik gucu ' + e.toString() + '-dir.';
+String mC(int c) {
+  final m = {1:'Liderlik enerjisi.',2:'Harmoniya.',3:'Yaradiciliq.',4:'Sabitlik.',5:'Deyisim.',6:'Mesuliyyet.',7:'Meneviyyat.',8:'Bolluq.',9:'Kamillik.'};
+  return m[c] ?? '';
+}
+String mR(int r) => r % 2 == 1 ? 'Ferdiyye - Hucumcu.' : 'Zovciyye - Mudafieci.';
+String mN(int n) {
+  final m = {1:'Liderlik.',2:'Emekdasliq.',3:'Optimizm.',4:'Sebir.',5:'Azadliq.',6:'Aile.',7:'Mudriklik.',8:'Ugur.',9:'Humanizm.',11:'Master intuisiya.',22:'Master qurucusu.',33:'Master muellimi.'};
+  return m[n] ?? '';
+}
+String mB(String b) {
+  final m = {'Qoc':'Cesur, Mars tesiri.','Buga':'Sebirli, Venera tesiri.','Ekizler':'Cevik, Merkuri tesiri.','Xerceng':'Duygusal, Ay tesiri.','Sir':'Lider, Gunes tesiri.','Qiz':'Analitik, Merkuri tesiri.','Terezi':'Balansli, Venera tesiri.','Eqreb':'Guclu, Pluton tesiri.','Oxatan':'Optimist, Yupiter tesiri.','Oglaq':'Meqsedli, Zuhal tesiri.','Dolca':'Yenilikci, Uran tesiri.','Baliq':'Xeyalpərəst, Neptun tesiri.'};
+  return m[b] ?? '';
+}
+String mAm(String am) => 'Ay menzili enerjisi: ' + am;
+String mHu(String h) => 'Uzun ' + h + ' cizgisi.';
+String mV(int e) {
+  int m = e % 9; if (m == 0) m = 9;
+  return m > 6 ? 'Guclu merkez.' : (m >= 4 ? 'Orta merkez.' : 'Zeif merkez.');
+}
+String mIa(String ia) => ia + ' - Allahn adlarindan biri.';
