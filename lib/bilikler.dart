@@ -12,116 +12,158 @@ class _SehifeReferenceState extends State<SehifeReference> {
   static const qirmizi = Color(0xFFC62828);
   static const qizil = Color(0xFFFFD700);
   static const ag = Colors.white;
-  final axtar = TextEditingController();
 
-  static const List<Map<String, String>> burcler = [
-    {'ad': 'Qoc', 'tarix': '21.03 - 19.04', 'p': 'Mars', 'e': 'Od', 'g': '1.8', 'x': 'Cesur'},
-    {'ad': 'Buga', 'tarix': '20.04 - 20.05', 'p': 'Venera', 'e': 'Torpaq', 'g': '1.2', 'x': 'Sebirli'},
-    {'ad': 'Ekizler', 'tarix': '21.05 - 20.06', 'p': 'Merkuri', 'e': 'Hava', 'g': '1.5', 'x': 'Cevik'},
-    {'ad': 'Xerceng', 'tarix': '21.06 - 22.07', 'p': 'Ay', 'e': 'Su', 'g': '1.0', 'x': 'Duygusal'},
-    {'ad': 'Sir', 'tarix': '23.07 - 22.08', 'p': 'Gunes', 'e': 'Od', 'g': '2.0', 'x': 'Lider'},
-    {'ad': 'Qiz', 'tarix': '23.08 - 22.09', 'p': 'Merkuri', 'e': 'Torpaq', 'g': '1.3', 'x': 'Analitik'},
-    {'ad': 'Terezi', 'tarix': '23.09 - 22.10', 'p': 'Venera', 'e': 'Hava', 'g': '1.1', 'x': 'Balansli'},
-    {'ad': 'Eqreb', 'tarix': '23.10 - 21.11', 'p': 'Pluton', 'e': 'Su', 'g': '1.7', 'x': 'Guclu'},
-    {'ad': 'Oxatan', 'tarix': '22.11 - 21.12', 'p': 'Yupiter', 'e': 'Od', 'g': '1.6', 'x': 'Optimist'},
-    {'ad': 'Oglaq', 'tarix': '22.12 - 19.01', 'p': 'Zuhal', 'e': 'Torpaq', 'g': '0.8', 'x': 'Meqsedli'},
-    {'ad': 'Dolca', 'tarix': '20.01 - 18.02', 'p': 'Uran', 'e': 'Hava', 'g': '1.1', 'x': 'Yenilikci'},
-    {'ad': 'Baliq', 'tarix': '19.02 - 20.03', 'p': 'Neptun', 'e': 'Su', 'g': '1.4', 'x': 'Xeyalperest'},
+  static const List<List<String>> burcler = [
+    ['Qoc', 'Mars', 'Od', '1.8', 'Cesur'],
+    ['Buga', 'Venera', 'Torpaq', '1.2', 'Sebirli'],
+    ['Ekizler', 'Merkuri', 'Hava', '1.5', 'Cevik'],
+    ['Xerceng', 'Ay', 'Su', '1.0', 'Duygusal'],
+    ['Sir', 'Gunes', 'Od', '2.0', 'Lider'],
+    ['Qiz', 'Merkuri', 'Torpaq', '1.3', 'Analitik'],
+    ['Terezi', 'Venera', 'Hava', '1.1', 'Balansli'],
+    ['Eqreb', 'Pluton', 'Su', '1.7', 'Guclu'],
+    ['Oxatan', 'Yupiter', 'Od', '1.6', 'Optimist'],
+    ['Oglaq', 'Zuhal', 'Torpaq', '0.8', 'Meqsedli'],
+    ['Dolca', 'Uran', 'Hava', '1.1', 'Yenilikci'],
+    ['Baliq', 'Neptun', 'Su', '1.4', 'Xeyalperest'],
   ];
 
-  static const List<Map<String, String>> ayMenzil = [
-    {'ad': 'Serateyn', 'm': 'Baslangic, muharibe', 'b': '+0.12'},
-    {'ad': 'Betn əl-Hut', 'm': 'Seyahat, gizli', 'b': '+0.08'},
-    {'ad': 'Sureya', 'm': 'Evlilik, bolluq', 'b': '+0.18'},
-    {'ad': 'Debaran', 'm': 'Xeyir, muveffeqiyyet', 'b': '+0.20'},
-    {'ad': 'Heqeh', 'm': 'Qazanc, ugur', 'b': '+0.22'},
-    {'ad': 'Henneh', 'm': 'Ittifaq, yardim', 'b': '+0.15'},
-    {'ad': 'Zire', 'm': 'Mulk qazanmaq', 'b': '+0.18'},
-    {'ad': 'Nesre', 'm': 'Cetin gun', 'b': '-0.10'},
-    {'ad': 'Terfe', 'm': 'Uzun xestelik', 'b': '-0.15'},
-    {'ad': 'Cebhe', 'm': 'Muveffeqiyyet', 'b': '+0.16'},
-    {'ad': 'Zubra', 'm': 'Yaxsiliq, dostluq', 'b': '+0.14'},
-    {'ad': 'Serfe', 'm': 'Keder, mane', 'b': '-0.08'},
-    {'ad': 'Ava', 'm': 'Intiqam, qorxu', 'b': '-0.12'},
-    {'ad': 'Simak', 'm': 'Asan dogum, rifah', 'b': '+0.10'},
-    {'ad': 'Gafr', 'm': 'Xezine, gizli', 'b': '+0.08'},
-    {'ad': 'Zubana', 'm': 'Esaret, belalar', 'b': '-0.18'},
-    {'ad': 'Iklil', 'm': 'Xeyirli', 'b': '+0.12'},
-    {'ad': 'Qelb', 'm': 'Guc, quvvet', 'b': '+0.20'},
-    {'ad': 'Sovle', 'm': 'Yaxsi isler', 'b': '+0.15'},
-    {'ad': 'Neayim', 'm': 'Ayriliq, huzn', 'b': '-0.10'},
-    {'ad': 'Belde', 'm': 'Geri donus', 'b': '+0.05'},
-    {'ad': 'SedZabih', 'm': 'Azadliq, sefa', 'b': '+0.18'},
-    {'ad': 'SedBula', 'm': 'Xestelik', 'b': '-0.08'},
-    {'ad': 'SedSuud', 'm': 'Evlilik, muveffeqiyyet', 'b': '+0.22'},
-    {'ad': 'SedAhbiye', 'm': 'Yagis, artim', 'b': '+0.15'},
-    {'ad': 'FergMukdim', 'm': 'Bina, ev', 'b': '+0.10'},
-    {'ad': 'FergMuaxir', 'm': 'Mehsul, ugur', 'b': '+0.12'},
-    {'ad': 'Risa', 'm': 'Baliqchiliq, xosbextlik', 'b': '+0.16'},
+  static const List<List<String>> cifr = [
+    ['1', 'Vahid, Baslangic', 'Liderlik'],
+    ['2', 'Cutluk, Tarazliq', 'Harmoniya'],
+    ['3', 'Ucluk, Yaradiciliq', 'Optimizm'],
+    ['4', 'Dordluk, Sabitlik', 'Sebir'],
+    ['5', 'Beslik, Deyisim', 'Azadliq'],
+    ['6', 'Altiliq, Mesuliyyet', 'Qaygi'],
+    ['7', 'Yeddilik, Meneviyyat', 'Mudriklik'],
+    ['8', 'Sekkizlik, Bolluq', 'Ugur'],
+    ['9', 'Doqquzluq, Tamamlanma', 'Kamillik'],
   ];
 
-  static const List<Map<String, String>> tarot = [
-    {'ad': 'Deli', 'm': 'Risk, baslangic', 'b': '+0.20', 's': '\u{1F3AD}'},
-    {'ad': 'Sehrbaz', 'm': 'Irade, bacariq', 'b': '+0.30', 's': '\u{1F52E}'},
-    {'ad': 'Bas Kahine', 'm': 'Bilik, intuisiya', 'b': '+0.15', 's': '\u{1F319}'},
-    {'ad': 'Imperatrica', 'm': 'Bolluq', 'b': '+0.25', 's': '\u{1F451}'},
-    {'ad': 'Imperator', 'm': 'Liderlik', 'b': '+0.35', 's': '\u{1F3DB}'},
-    {'ad': 'Hierofant', 'm': 'Enene', 'b': '+0.18', 's': '\u{1F4DC}'},
-    {'ad': 'Asiqler', 'm': 'Harmoniya', 'b': '+0.22', 's': '\u{1F495}'},
-    {'ad': 'Araba', 'm': 'Qelebe', 'b': '+0.40', 's': '\u{1F3C7}'},
-    {'ad': 'Guc', 'm': 'Cesaret', 'b': '+0.45', 's': '\u{1F981}'},
-    {'ad': 'Zahid', 'm': 'Fokus', 'b': '+0.12', 's': '\u{1F9D8}'},
-    {'ad': 'Bext Carxi', 'm': 'Sans', 'b': '+0.35', 's': '\u{1F3A1}'},
-    {'ad': 'Edalet', 'm': 'Balans', 'b': '+0.15', 's': '\u2696'},
-    {'ad': 'Asilmis', 'm': 'Gozleme', 'b': '-0.10', 's': '\u{1F643}'},
-    {'ad': 'Deyisim', 'm': 'Transformasiya', 'b': '+0.05', 's': '\u{1F480}'},
-    {'ad': 'Muvazinet', 'm': 'Sebir', 'b': '+0.18', 's': '\u{1F30A}'},
-    {'ad': 'Seytan', 'm': 'Asliliq', 'b': '-0.20', 's': '\u{1F608}'},
-    {'ad': 'Qulle', 'm': 'Dagilma', 'b': '-0.30', 's': '\u{1F5FC}'},
-    {'ad': 'Ulduz', 'm': 'Umid', 'b': '+0.28', 's': '\u2B50'},
-    {'ad': 'Ay', 'm': 'Illuziya', 'b': '-0.15', 's': '\u{1F315}'},
-    {'ad': 'Gunes', 'm': 'Ugur', 'b': '+0.50', 's': '\u2600'},
-    {'ad': 'Mehkeme', 'm': 'Oyanis', 'b': '+0.22', 's': '\u{1F4EF}'},
-    {'ad': 'Dunya', 'm': 'Tamamlanma', 'b': '+0.45', 's': '\u{1F30D}'},
+  static const List<List<String>> tarot = [
+    ['Deli', 'Risk, baslangic', '+0.20'],
+    ['Sehrbaz', 'Irade, bacariq', '+0.30'],
+    ['Bas Kahine', 'Bilik, intuisiya', '+0.15'],
+    ['Imperatrica', 'Bolluq', '+0.25'],
+    ['Imperator', 'Liderlik', '+0.35'],
+    ['Hierofant', 'Enene', '+0.18'],
+    ['Asiqler', 'Harmoniya', '+0.22'],
+    ['Araba', 'Qelebe', '+0.40'],
+    ['Guc', 'Cesaret', '+0.45'],
+    ['Zahid', 'Fokus', '+0.12'],
+    ['Bext Carxi', 'Sans', '+0.35'],
+    ['Edalet', 'Balans', '+0.15'],
+    ['Asilmis', 'Gozleme', '-0.10'],
+    ['Deyisim', 'Transformasiya', '+0.05'],
+    ['Muvazinet', 'Sebir', '+0.18'],
+    ['Seytan', 'Asliliq', '-0.20'],
+    ['Qulle', 'Dagilma', '-0.30'],
+    ['Ulduz', 'Umid', '+0.28'],
+    ['Ay', 'Illuziya', '-0.15'],
+    ['Gunes', 'Ugur', '+0.50'],
+    ['Mehkeme', 'Oyanis', '+0.22'],
+    ['Dunya', 'Tamamlanma', '+0.45'],
   ];
 
-  static const List<Map<String, String>> reml = [
-    {'ad': 'Via', 'm': 'Yol, seyahet', 'b': '0.00'},
-    {'ad': 'Populus', 'm': 'Kutle, xalq', 'b': '+0.15'},
-    {'ad': 'Acquisitio', 'm': 'Qazanc', 'b': '+0.22'},
-    {'ad': 'Laetitia', 'm': 'Sevinc', 'b': '+0.28'},
-    {'ad': 'Fortuna Major', 'm': 'Boyuk bext', 'b': '+0.30'},
-    {'ad': 'Conjunctio', 'm': 'Ittifaq', 'b': '+0.18'},
-    {'ad': 'Rubeus', 'm': 'Qezeb', 'b': '-0.18'},
-    {'ad': 'Amissio', 'm': 'Itki', 'b': '-0.25'},
-    {'ad': 'Tristitia', 'm': 'Keder', 'b': '-0.15'},
-    {'ad': 'Carcer', 'm': 'Mehdudiyyet', 'b': '-0.22'},
-    {'ad': 'Fortuna Minor', 'm': 'Kicik bext', 'b': '+0.15'},
-    {'ad': 'Puer', 'm': 'Genc guc', 'b': '+0.20'},
-    {'ad': 'Puella', 'm': 'Harmoniya', 'b': '+0.12'},
-    {'ad': 'Albus', 'm': 'Safliq', 'b': '+0.10'},
-    {'ad': 'Caput Draconis', 'm': 'Yeni furset', 'b': '+0.08'},
-    {'ad': 'Cauda Draconis', 'm': 'Baglanma', 'b': '-0.12'},
+  static const List<List<String>> reml = [
+    ['Via', 'Yol, seyahet', '0.00'],
+    ['Populus', 'Kutle, xalq', '+0.15'],
+    ['Acquisitio', 'Qazanc', '+0.22'],
+    ['Laetitia', 'Sevinc', '+0.28'],
+    ['Fortuna Major', 'Boyuk bext', '+0.30'],
+    ['Conjunctio', 'Ittifaq', '+0.18'],
+    ['Rubeus', 'Qezeb', '-0.18'],
+    ['Amissio', 'Itki', '-0.25'],
+    ['Tristitia', 'Keder', '-0.15'],
+    ['Carcer', 'Mehdudiyyet', '-0.22'],
+    ['Fortuna Minor', 'Kicik bext', '+0.15'],
+    ['Puer', 'Genc guc', '+0.20'],
+    ['Puella', 'Harmoniya', '+0.12'],
+    ['Albus', 'Safliq', '+0.10'],
+    ['Caput Draconis', 'Yeni furset', '+0.08'],
+    ['Cauda Draconis', 'Baglanma', '-0.12'],
   ];
 
-  static const List<Map<String, String>> cifr = [
-    {'r': '1', 'm': 'Vahid, Baslangic', 'e': 'Liderlik'},
-    {'r': '2', 'm': 'Cutluk, Tarazliq', 'e': 'Harmoniya'},
-    {'r': '3', 'm': 'Ucluk, Yaradiciliq', 'e': 'Optimizm'},
-    {'r': '4', 'm': 'Dordluk, Sabitlik', 'e': 'Sebir'},
-    {'r': '5', 'm': 'Beslik, Deyisim', 'e': 'Azadliq'},
-    {'r': '6', 'm': 'Altiliq, Mesuliyyet', 'e': 'Qaygi'},
-    {'r': '7', 'm': 'Yeddilik, Meneviyyat', 'e': 'Mudriklik'},
-    {'r': '8', 'm': 'Sekkizlik, Bolluq', 'e': 'Ugur'},
-    {'r': '9', 'm': 'Doqquzluq, Tamamlanma', 'e': 'Kamillik'},
+  static const List<List<String>> planet = [
+    ['Bazar', 'Gunes', 'Liderlik', '+0.18'],
+    ['B.e.', 'Ay', 'Duygu', '+0.10'],
+    ['C.a.', 'Mars', 'Aqressiya', '+0.15'],
+    ['Cersenbe', 'Merkuri', 'Zeka', '+0.05'],
+    ['C.a.', 'Yupiter', 'Ugur', '+0.20'],
+    ['Cume', 'Venera', 'Harmoniya', '+0.12'],
+    ['Senbe', 'Zuhal', 'Mehdudiyyet', '-0.10'],
   ];
 
-  static const List<Map<String, String>> planet = [
-    {'g': 'Bazar', 'p': 'Gunes', 'e': 'Liderlik', 'b': '+0.18'},
-    {'g': 'B.e.', 'p': 'Ay', 'e': 'Duygu', 'b': '+0.10'},
-    {'g': 'C.a.', 'p': 'Mars', 'e': 'Aqressiya', 'b': '+0.15'},
-    {'g': 'Cersenbe', 'p': 'Merkuri', 'e': 'Zeka', 'b': '+0.05'},
-    {'g': 'C.a.', 'p': 'Yupiter', 'e': 'Ugur', 'b': '+0.20'},
-    {'g': 'Cume', 'p': 'Venera', 'e': 'Harmoniya', 'b': '+0.12'},
-    {'g': 'Senbe', 'p': 'Zuhal', 'e': 'Mehdudiyyet', 'b': '-0.10'},
-  ];
+  void _ac(String basliq, List<List<String>> data, List<String> keys) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: qara,
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(20))),
+      builder: (_) => DraggableScrollableSheet(
+        expand: false,
+        initialChildSize: 0.85,
+        builder: (_, scroll) => Column(children: [
+          Container(margin: const EdgeInsets.all(12), width: 40, height: 4, decoration: BoxDecoration(color: qizil, borderRadius: BorderRadius.circular(2))),
+          Padding(padding: const EdgeInsets.all(12), child: Text(basliq, style: const TextStyle(color: qizil, fontSize: 18, fontWeight: FontWeight.bold))),
+          Expanded(child: ListView.builder(
+            controller: scroll,
+            padding: const EdgeInsets.symmetric(horizontal: 12),
+            itemCount: data.length,
+            itemBuilder: (_, i) {
+              var d = data[i];
+              return Container(
+                margin: const EdgeInsets.only(bottom: 8),
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(color: tundQara, borderRadius: BorderRadius.circular(10), border: Border.all(color: qizil.withOpacity(0.3))),
+                child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  Text(d[0], style: const TextStyle(color: qizil, fontWeight: FontWeight.bold, fontSize: 14)),
+                  const SizedBox(height: 4),
+                  for (int j = 1; j < d.length; j++)
+                    Text(keys[j] + ': ' + d[j], style: const TextStyle(color: ag, fontSize: 13, height: 1.4)),
+                ]),
+              );
+            },
+          )),
+        ]),
+      ),
+    );
+  }
+
+  Widget _card(String ad, IconData ikon, Color r, VoidCallback onTap) => InkWell(
+    onTap: onTap,
+    child: Container(
+      margin: const EdgeInsets.only(bottom: 10),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(color: tundQara, borderRadius: BorderRadius.circular(12), border: Border.all(color: r.withOpacity(0.5))),
+      child: Row(children: [
+        Icon(ikon, color: r, size: 28),
+        const SizedBox(width: 14),
+        Expanded(child: Text(ad, style: const TextStyle(color: ag, fontSize: 16, fontWeight: FontWeight.bold))),
+        Icon(Icons.arrow_forward_ios, color: r, size: 16),
+      ]),
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: qara,
+      appBar: AppBar(
+        backgroundColor: tundQara,
+        title: const Text('BILIKLER', style: TextStyle(color: qirmizi, fontWeight: FontWeight.bold, fontSize: 16)),
+        iconTheme: const IconThemeData(color: qirmizi),
+      ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(14),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          _card('12 Burc Cedveli', Icons.star, qizil, () => _ac('12 BURC', burcler, ['', 'Planet', 'Element', 'Guc', 'Xasiyyet'])),
+          _card('Cifr Menalari', Icons.numbers, Colors.cyan, () => _ac('CIFR MENALARI', cifr, ['', 'Mena', 'Enerji'])),
+          _card('22 Tarot Kartlari', Icons.style, Colors.purpleAccent, () => _ac('22 TAROT', tarot, ['', 'Mena', 'Bonus'])),
+          _card('16 Reml Fiquru', Icons.grid_on, qirmizi, () => _ac('16 REML', reml, ['', 'Mena', 'Bonus'])),
+          _card('Planet Gunleri', Icons.calendar_today, Colors.blueAccent, () => _ac('PLANET GUNLERI', planet, ['', 'Planet', 'Enerji', 'Bonus'])),
+        ]),
+      ),
+    );
+  }
+}
