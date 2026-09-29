@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'ai_destek.dart';
+import 'paylas.dart';
 import 'package:flutter/services.dart';
 
 class SehifePersonal extends StatefulWidget {
