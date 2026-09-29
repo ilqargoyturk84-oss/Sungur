@@ -1,3 +1,4 @@
+import 'ai_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -251,6 +252,7 @@ class _SehifeCompatState extends State<SehifeCompat> {
           ],
         ]),
       ),
+      AIButton(hazir: n != null, getMetn: () => AI.uygunluq(n!['umumi'], n!['nikah'], a1.text, a2.text)),
     );
   }
 }

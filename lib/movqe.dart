@@ -1,3 +1,4 @@
+import 'ai_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -125,6 +126,7 @@ class _SehifePositionState extends State<SehifePosition> {
           ),
         ]),
       ),
+      AIButton(hazir: n != null, getMetn: () => AI.movqe(n!['beka'], ad.text, yer.text)),
     );
   }
 }
