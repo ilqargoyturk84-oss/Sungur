@@ -147,7 +147,6 @@ class _SehifeTarotState extends State<SehifeTarot> {
           ],
         ]),
       ),
-      AIButton(hazir: n != null, getMetn: () => AI.tarot(n!['ad'], n!['mena'], niyyet.text)),
     );
   }
 }

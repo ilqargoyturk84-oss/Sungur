@@ -116,7 +116,6 @@ class _SehifeRemlState extends State<SehifeReml> {
           ),
         ]),
       ),
-      AIButton(hazir: n != null, getMetn: () => AI.reml(n!['ad'], n!['mena'], niyyet.text)),
     );
   }
 }

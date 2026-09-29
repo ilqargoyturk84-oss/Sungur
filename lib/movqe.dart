@@ -126,7 +126,6 @@ class _SehifePositionState extends State<SehifePosition> {
           ),
         ]),
       ),
-      AIButton(hazir: n != null, getMetn: () => AI.movqe(n!['beka'], ad.text, yer.text)),
     );
   }
 }
