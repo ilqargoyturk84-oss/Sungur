@@ -1,3 +1,4 @@
+import 'bilikler.dart';
 import 'movqe.dart';
 import 'reml.dart';
 import 'tarot.dart';
