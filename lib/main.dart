@@ -1,3 +1,4 @@
+import 'gunun_karti.dart';
 import 'ai_destek.dart';
 import 'bilikler.dart';
 import 'movqe.dart';
@@ -340,6 +341,7 @@ class EsasEkran extends StatelessWidget {
         children: [
           const SizedBox(height: 10),
           Text(L.t('tag'), style: const TextStyle(color: C.boz, fontSize: 12, letterSpacing: 2)),
+          const GununKarti(),
           const SizedBox(height: 20),
           Expanded(
             child: GridView.builder(
