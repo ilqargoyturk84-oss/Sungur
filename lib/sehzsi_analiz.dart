@@ -137,6 +137,22 @@ class _SehifePersonalState extends State<SehifePersonal> {
     });
   }
 
+
+  String? aiMetn;
+  bool aiYuklenir = false;
+
+  void aiAnaliz() async {
+    if (n == null) return;
+    setState(() => aiYuklenir = true);
+    await Future.delayed(const Duration(milliseconds: 500));
+    String metn = AI.sexsi(n!['e'], n!['c'], n!['p'], n!['b']['ad']);
+    setState(() {
+      aiMetn = metn;
+      aiYuklenir = false;
+    });
+    HapticFeedback.mediumImpact();
+  }
+
   Widget k(String b, String m, Color r) => Container(
     margin: const EdgeInsets.only(bottom: 10),
     padding: const EdgeInsets.all(14),
@@ -189,6 +205,37 @@ class _SehifePersonalState extends State<SehifePersonal> {
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             ),
           ),
+
+          const SizedBox(height: 12),
+          if (n != null) ElevatedButton.icon(
+            onPressed: aiYuklenir ? null : aiAnaliz,
+            icon: aiYuklenir ? const SizedBox(width: 20, height: 20, child: CircularProgressIndicator(color: ag, strokeWidth: 2)) : const Icon(Icons.psychology),
+            label: Text(aiYuklenir ? 'AI DUSUNUR...' : 'AI ANALIZ', style: const TextStyle(fontWeight: FontWeight.bold)),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.purpleAccent, foregroundColor: ag,
+              padding: const EdgeInsets.symmetric(vertical: 14),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+            ),
+          ),
+          if (aiMetn != null) Container(
+            margin: const EdgeInsets.only(top: 14),
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              color: tundQara,
+              borderRadius: BorderRadius.circular(14),
+              border: Border.all(color: Colors.purpleAccent, width: 2),
+            ),
+            child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              const Row(children: [
+                Icon(Icons.psychology, color: Colors.purpleAccent, size: 24),
+                SizedBox(width: 8),
+                Text('AI ANALIZ', style: TextStyle(color: Colors.purpleAccent, fontWeight: FontWeight.bold, fontSize: 14)),
+              ]),
+              const SizedBox(height: 10),
+              Text(aiMetn!, style: const TextStyle(color: ag, fontSize: 15, height: 1.5)),
+            ]),
+          ),
+
           const SizedBox(height: 20),
           if (n != null) ...[
             k('Ad', n!['ad'], ag),

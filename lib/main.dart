@@ -1,3 +1,4 @@
+import 'ai_destek.dart';
 import 'bilikler.dart';
 import 'movqe.dart';
 import 'reml.dart';
