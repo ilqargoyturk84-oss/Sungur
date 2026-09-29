@@ -489,8 +489,3 @@ class _SehifePlaceholder extends StatelessWidget {
 
 
 
-class SehifeReference extends StatelessWidget {
-  const SehifeReference({super.key});
-  @override
-  Widget build(BuildContext context) => _SehifePlaceholder(ad: L.t('reference'), ikon: Icons.menu_book, reng: C.qizil);
-}
