@@ -1,3 +1,4 @@
+import 'ai_destek.dart';
 import 'ai_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -144,6 +145,7 @@ class _SehifeTarotState extends State<SehifeTarot> {
                 Text('Bonus: ' + n!['b'], style: TextStyle(color: n!['ters'] ? qirmizi : qizil, fontSize: 18, fontWeight: FontWeight.bold)),
               ]),
             ),
+          AIButton(hazir: n != null, getMetn: () => AI.tarot(n!['ad'], n!['mena'], niyyet.text)),
           ],
         ]),
       ),
