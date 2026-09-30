@@ -309,6 +309,7 @@ class EsasEkran extends StatelessWidget {
       {'ad': L.t('reml'), 'alt': L.t('reml_d'), 'ikon': Icons.grid_on, 'reng': C.qirmizi},
       {'ad': L.t('position'), 'alt': L.t('position_d'), 'ikon': Icons.place, 'reng': C.qirmiziAcik},
       {'ad': L.t('reference'), 'alt': L.t('reference_d'), 'ikon': Icons.menu_book, 'reng': C.qizil},
+      {'ad': 'CHATBOT', 'alt': 'Sungur AI ile sohbet', 'ikon': Icons.psychology, 'reng': Colors.purpleAccent},
     ];
 
     return Scaffold(
@@ -384,6 +385,7 @@ class EsasEkran extends StatelessWidget {
       const SehifeReml(),
       const SehifePosition(),
       const SehifeReference(),
+      const Chatbot(),
     ];
     Navigator.push(ctx, MaterialPageRoute(builder: (_) => sehifeler[i]));
   }
