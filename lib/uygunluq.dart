@@ -253,7 +253,6 @@ class _SehifeCompatState extends State<SehifeCompat> {
             k('Tefsilar', 'Reqem bonusu: ' + n!['eB'].toStringAsFixed(3) + '\nElement: ' + n!['elB'].toStringAsFixed(3) + '\nBurc: ' + n!['bB'].toStringAsFixed(3) + '\nKenzul: ' + n!['knz'].toString(), qizil),
           ],
           if (n != null) ElevatedButton.icon(onPressed: () => Paylas.goster(context, 'Sungur', 'Uygunluq neticesi'), icon: const Icon(Icons.share), label: const Text('PAYLAS'), style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: ag, padding: const EdgeInsets.symmetric(vertical: 12))),
-git add .
           AIButton(hazir: n != null, getMetn: () => AI.uygunluq(n!['umumi'], n!['nikah'], a1.text, a2.text)),
         ]),
       ),
