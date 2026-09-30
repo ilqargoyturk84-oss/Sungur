@@ -1,3 +1,4 @@
+import 'paylas.dart';
 import 'ai_destek.dart';
 import 'ai_widget.dart';
 import 'package:flutter/material.dart';
@@ -115,6 +116,7 @@ class _SehifeRemlState extends State<SehifeReml> {
               Text('Bonus: ' + n!['b'], style: const TextStyle(color: qizil, fontSize: 18, fontWeight: FontWeight.bold)),
             ]),
           ),
+          if (n != null) ElevatedButton.icon(onPressed: () => Paylas.goster(context, 'Sungur', 'Reml neticesi'), icon: const Icon(Icons.share), label: const Text('PAYLAS'), style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: ag, padding: const EdgeInsets.symmetric(vertical: 12))),
           AIButton(hazir: n != null, getMetn: () => AI.reml(n!['ad'], n!['mena'], niyyet.text)),
         ]),
       ),

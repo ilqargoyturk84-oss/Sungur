@@ -1,3 +1,4 @@
+import 'paylas.dart';
 import 'ai_destek.dart';
 import 'ai_widget.dart';
 import 'package:flutter/material.dart';
@@ -125,6 +126,7 @@ class _SehifePositionState extends State<SehifePosition> {
               Text('Kenzul: ' + n!['k'].toString(), style: const TextStyle(color: qizil, fontSize: 12)),
             ]),
           ),
+          if (n != null) ElevatedButton.icon(onPressed: () => Paylas.goster(context, 'Sungur', 'Movqe neticesi'), icon: const Icon(Icons.share), label: const Text('PAYLAS'), style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: ag, padding: const EdgeInsets.symmetric(vertical: 12))),
           AIButton(hazir: n != null, getMetn: () => AI.movqe(n!['beka'], ad.text, yer.text)),
         ]),
       ),

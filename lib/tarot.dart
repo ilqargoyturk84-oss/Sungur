@@ -1,3 +1,4 @@
+import 'paylas.dart';
 import 'ai_destek.dart';
 import 'ai_widget.dart';
 import 'package:flutter/material.dart';
@@ -146,6 +147,7 @@ class _SehifeTarotState extends State<SehifeTarot> {
               ]),
             ),
           ],
+          if (n != null) ElevatedButton.icon(onPressed: () => Paylas.goster(context, 'Sungur', 'Tarot neticesi'), icon: const Icon(Icons.share), label: const Text('PAYLAS'), style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: ag, padding: const EdgeInsets.symmetric(vertical: 12))),
           AIButton(hazir: n != null, getMetn: () => AI.tarot(n!['ad'], n!['mena'], niyyet.text)),
         ]),
       ),

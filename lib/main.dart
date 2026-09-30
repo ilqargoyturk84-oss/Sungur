@@ -1,3 +1,6 @@
+import 'gunun_ay.dart';
+import 'streak.dart';
+import 'chatbot.dart';
 import 'gunun_karti.dart';
 import 'ai_destek.dart';
 import 'bilikler.dart';
@@ -342,6 +345,8 @@ class EsasEkran extends StatelessWidget {
           const SizedBox(height: 10),
           Text(L.t('tag'), style: const TextStyle(color: C.boz, fontSize: 12, letterSpacing: 2)),
           const GununKarti(),
+          const GununAy(),
+          const StreakWidget(),
           const SizedBox(height: 20),
           Expanded(
             child: GridView.builder(
