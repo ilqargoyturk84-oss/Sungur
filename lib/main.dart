@@ -1,3 +1,4 @@
+import 'bati_astro.dart';
 import 'gunun_ay.dart';
 import 'streak.dart';
 import 'chatbot.dart';
@@ -310,6 +311,7 @@ class EsasEkran extends StatelessWidget {
       {'ad': L.t('position'), 'alt': L.t('position_d'), 'ikon': Icons.place, 'reng': C.qirmiziAcik},
       {'ad': L.t('reference'), 'alt': L.t('reference_d'), 'ikon': Icons.menu_book, 'reng': C.qizil},
       {'ad': 'CHATBOT', 'alt': 'Sungur AI ile sohbet', 'ikon': Icons.psychology, 'reng': Colors.purpleAccent},
+      {'ad': 'BATI ASTROLOJIYASI', 'alt': 'Dogum xeritesi (Birth Chart)', 'ikon': Icons.public, 'reng': Colors.orangeAccent},
     ];
 
     return Scaffold(
@@ -386,6 +388,7 @@ class EsasEkran extends StatelessWidget {
       const SehifePosition(),
       const SehifeReference(),
       const Chatbot(),
+      const BatiAstro(),
     ];
     Navigator.push(ctx, MaterialPageRoute(builder: (_) => sehifeler[i]));
   }
