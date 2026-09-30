@@ -250,6 +250,7 @@ class _SehifeCompatState extends State<SehifeCompat> {
             k(n!['b2'] + ' (' + n!['el2'] + ')', 'Ebc: ' + n!['e2'].toString() + ' | Cifr: ' + n!['c2'].toString() + ' | Numer: ' + n!['p2'].toString(), Colors.purpleAccent),
             k('Tefsilar', 'Reqem bonusu: ' + n!['eB'].toStringAsFixed(3) + '\nElement: ' + n!['elB'].toStringAsFixed(3) + '\nBurc: ' + n!['bB'].toStringAsFixed(3) + '\nKenzul: ' + n!['knz'].toString(), qizil),
           ],
+          AIButton(hazir: n != null, getMetn: () => AI.uygunluq(n!['umumi'], n!['nikah'], a1.text, a2.text)),
         ]),
       ),
     );
