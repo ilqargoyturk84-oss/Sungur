@@ -125,6 +125,7 @@ class _SehifeTarotState extends State<SehifeTarot> {
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: n!['ters'] ? qirmizi : qizil, width: 2),
                 boxShadow: [BoxShadow(color: (n!['ters'] ? qirmizi : qizil).withOpacity(0.3), blurRadius: 20)],
+          AIButton(hazir: n != null, getMetn: () => AI.tarot(n!['ad'], n!['mena'], niyyet.text)),
               ),
               child: Column(children: [
                 Text(n!['s'], style: const TextStyle(fontSize: 70)),

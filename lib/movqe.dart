@@ -111,6 +111,7 @@ class _SehifePositionState extends State<SehifePosition> {
               borderRadius: BorderRadius.circular(16),
               border: Border.all(color: n!['beka'] ? yasil : qirmizi, width: 2),
               boxShadow: [BoxShadow(color: (n!['beka'] ? yasil : qirmizi).withOpacity(0.3), blurRadius: 20)],
+          AIButton(hazir: n != null, getMetn: () => AI.movqe(n!['beka'], ad.text, yer.text)),
             ),
             child: Column(children: [
               Icon(n!['beka'] ? Icons.home : Icons.directions_walk, color: n!['beka'] ? yasil : qirmizi, size: 60),
