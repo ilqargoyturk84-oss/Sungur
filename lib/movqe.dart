@@ -125,6 +125,7 @@ class _SehifePositionState extends State<SehifePosition> {
               Text('Kenzul: ' + n!['k'].toString(), style: const TextStyle(color: qizil, fontSize: 12)),
             ]),
           ),
+          AIButton(hazir: n != null, getMetn: () => AI.movqe(n!['beka'], ad.text, yer.text)),
         ]),
       ),
     );

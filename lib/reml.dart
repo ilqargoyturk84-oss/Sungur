@@ -115,6 +115,7 @@ class _SehifeRemlState extends State<SehifeReml> {
               Text('Bonus: ' + n!['b'], style: const TextStyle(color: qizil, fontSize: 18, fontWeight: FontWeight.bold)),
             ]),
           ),
+          AIButton(hazir: n != null, getMetn: () => AI.reml(n!['ad'], n!['mena'], niyyet.text)),
         ]),
       ),
     );
