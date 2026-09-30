@@ -39,14 +39,14 @@ class _SinastriyaState extends State<Sinastriya> {
     String b2 = bT(int.parse(g2.text), int.parse(m2.text));
     int e1 = el[bAd.indexOf(b1)].length; int e2 = el[bAd.indexOf(b2)].length;
     String eA = el[bAd.indexOf(b1)]; String eB = el[bAd.indexOf(b2)];
-    String nəticə; Color renk;
-    if (eA == eB) { nəticə = 'Eyni element - GUCLU UYĞUNLUQ'; renk = Colors.greenAccent; }
-    else if ((eA == 'Od' && eB == 'Hava') || (eA == 'Hava' && eB == 'Od')) { nəticə = 'Dost elementler - YAXSI'; renk = Colors.greenAccent; }
-    else if ((eA == 'Su' && eB == 'Torpaq') || (eA == 'Torpaq' && eB == 'Su')) { nəticə = 'Dost elementler - YAXSI'; renk = Colors.greenAccent; }
-    else if (b1 == b2) { nəticə = 'Eyni burc - TARAZLIQ'; renk = qizil; }
-    else { nəticə = 'Ferqli enerjiler - ORTA'; renk = Colors.amber; }
+    String netice; Color renk;
+    if (eA == eB) { netice = 'Eyni element - GUCLU UYĞUNLUQ'; renk = Colors.greenAccent; }
+    else if ((eA == 'Od' && eB == 'Hava') || (eA == 'Hava' && eB == 'Od')) { netice = 'Dost elementler - YAXSI'; renk = Colors.greenAccent; }
+    else if ((eA == 'Su' && eB == 'Torpaq') || (eA == 'Torpaq' && eB == 'Su')) { netice = 'Dost elementler - YAXSI'; renk = Colors.greenAccent; }
+    else if (b1 == b2) { netice = 'Eyni burc - TARAZLIQ'; renk = qizil; }
+    else { netice = 'Ferqli enerjiler - ORTA'; renk = Colors.amber; }
     HapticFeedback.mediumImpact();
-    setState(() { n = {'b1': b1, 'b2': b2, 'eA': eA, 'eB': eB, 'n': nəticə, 'r': renk}; });
+    setState(() { n = {'b1': b1, 'b2': b2, 'eA': eA, 'eB': eB, 'n': netice, 'r': renk}; });
   }
   Widget f(TextEditingController c, String l) => TextField(controller: c, decoration: InputDecoration(labelText: l, labelStyle: const TextStyle(color: qizil), border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)), focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: const BorderSide(color: qirmizi))));
   @override
