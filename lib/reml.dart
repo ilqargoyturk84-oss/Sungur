@@ -104,7 +104,6 @@ class _SehifeRemlState extends State<SehifeReml> {
             ),
             child: Column(children: [
               Text(n!['nq'], style: const TextStyle(fontSize: 50, color: qizil, letterSpacing: 8)),
-          AIButton(hazir: n != null, getMetn: () => AI.reml(n!['ad'], n!['mena'], niyyet.text)),
               const SizedBox(height: 16),
               Text(n!['ad'], style: const TextStyle(color: qizil, fontSize: 22, fontWeight: FontWeight.bold), textAlign: TextAlign.center),
               const SizedBox(height: 4),

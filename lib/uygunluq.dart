@@ -235,7 +235,6 @@ class _SehifeCompatState extends State<SehifeCompat> {
             Container(
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(color: tundQara, borderRadius: BorderRadius.circular(16), border: Border.all(color: n!['renk'], width: 2)),
-          AIButton(hazir: n != null, getMetn: () => AI.uygunluq(n!['umumi'], n!['nikah'], a1.text, a2.text)),
               child: Column(children: [
                 Icon(n!['nikah'] ? Icons.favorite : Icons.heart_broken, color: n!['nikah'] ? yasil : qirmizi, size: 50),
                 const SizedBox(height: 12),
