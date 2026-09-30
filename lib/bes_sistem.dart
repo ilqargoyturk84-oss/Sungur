@@ -1,3 +1,4 @@
+import 'ai_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -35,8 +36,8 @@ class _SinastriyaState extends State<Sinastriya> {
   }
   void h() {
     if (g1.text.isEmpty || g2.text.isEmpty) return;
-    String b1 = bT(int.parse(g1.text), int.parse(m1.text));
-    String b2 = bT(int.parse(g2.text), int.parse(m2.text));
+    String b1 = bT(int.tryParse(g1.text) ?? 1, int.tryParse(m1.text) ?? 1);
+    String b2 = bT(int.tryParse(g2.text) ?? 1, int.tryParse(m2.text) ?? 1);
     int e1 = el[bAd.indexOf(b1)].length; int e2 = el[bAd.indexOf(b2)].length;
     String eA = el[bAd.indexOf(b1)]; String eB = el[bAd.indexOf(b2)];
     String netice; Color renk;
@@ -65,6 +66,7 @@ class _SinastriyaState extends State<Sinastriya> {
           Text(n!['b1'] + ' + ' + n!['b2'], style: const TextStyle(color: ag, fontSize: 16)),
           Text('Element: ' + n!['eA'] + ' + ' + n!['eB'], style: const TextStyle(color: ag, fontSize: 14)),
         ])),
+          AIButton(hazir: n != null, getMetn: () => 'Sinastriya: ' + n!['b1'] + ' + ' + n!['b2'] + ' (' + n!['eA'] + ' + ' + n!['eB'] + '). ' + n!['n']),
       ])));
   }
 }
@@ -86,7 +88,7 @@ class _VedicState extends State<Vedic> {
   static const List<String> nak = ['Ashwini','Bharani','Krittika','Rohini','Mrigashira','Ardra','Punarvasu','Pushya','Ashlesha','Magha','P.Phalguni','U.Phalguni','Hasta','Chitra','Swati','Vishakha','Anuradha','Jyeshtha','Mula','P.Ashadha','U.Ashadha','Shravana','Dhanishta','Shatabhisha','P.Bhadrapada','U.Bhadrapada','Revati'];
   void h() {
     if (g.text.isEmpty) return;
-    int gi = int.parse(g.text); int ai = int.parse(a.text); int ii = int.parse(i.text);
+    int gi = int.tryParse(g.text) ?? 1; int ai = int.tryParse(a.text) ?? 1; int ii = int.tryParse(i.text) ?? 2000;
     int gunSay = (ii - 2000) * 365 + (ai - 1) * 30 + gi;
     int idx = (gunSay * 27 ~/ 365) % 27;
     HapticFeedback.mediumImpact();
@@ -108,6 +110,7 @@ class _VedicState extends State<Vedic> {
           const SizedBox(height: 8),
           const Text('27 Ulduz Menzilinden biri', style: TextStyle(color: Colors.white70, fontSize: 12)),
         ])),
+          AIButton(hazir: n != null, getMetn: () => 'Nakshatraniz: ' + n!['nak'] + '. 27 ulduz menzilinden biridir.'),
       ])));
   }
 }
@@ -130,7 +133,7 @@ class _BaZiState extends State<BaZi> {
   static const List<String> element = ['Metal','Metal','Su','Su','Odun','Odun','Od','Od','Torpaq','Torpaq'];
   void h() {
     if (s.text.isEmpty) return;
-    int ii = int.parse(s.text); int aa = int.parse(d.text); int gg = int.parse(saat.text);
+    int ii = int.tryParse(s.text) ?? 2000; int aa = int.tryParse(d.text) ?? 1; int gg = int.tryParse(saat.text) ?? 1;
     String h1 = heyvan[ii % 12]; String e1 = element[ii % 10];
     String h2 = heyvan[aa % 12]; String e2 = element[aa % 10];
     String h3 = heyvan[gg % 12]; String e3 = element[gg % 10];
@@ -158,6 +161,7 @@ class _BaZiState extends State<BaZi> {
             Text(n!['h3'] + ' - ' + n!['e3'], style: const TextStyle(color: ag, fontSize: 16)),
           ])),
         ],
+          AIButton(hazir: n != null, getMetn: () => 'Ba Zi: Il ' + n!['h1'] + ' ' + n!['e1'] + ', Ay ' + n!['h2'] + ' ' + n!['e2'] + ', Gun ' + n!['h3'] + ' ' + n!['e3']),
       ])));
   }
 }
@@ -215,6 +219,7 @@ class _KabbalahState extends State<Kabbalah> {
           const SizedBox(height: 8),
           Text('Ebcəd: ' + n!['req'].toString(), style: const TextStyle(color: Colors.grey, fontSize: 12)),
         ])),
+          AIButton(hazir: n != null, getMetn: () => 'Sefirotunuz: ' + n!['sef']['a'] + ' - ' + n!['sef']['m']),
       ])));
   }
 }
@@ -282,6 +287,7 @@ class _RunesState extends State<Runes> {
           const SizedBox(height: 8),
           Text(n!['r']['m']!, style: const TextStyle(color: ag, fontSize: 15), textAlign: TextAlign.center),
         ])),
+          AIButton(hazir: n != null, getMetn: () => 'Rununuz: ' + n!['r']['a'] + ' - ' + n!['r']['m']),
       ])));
   }
 }
