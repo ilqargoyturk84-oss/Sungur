@@ -1,3 +1,4 @@
+import 'uc_sistem.dart';
 import 'bes_sistem.dart';
 import 'bati_astro.dart';
 import 'gunun_ay.dart';
@@ -318,6 +319,9 @@ class EsasEkran extends StatelessWidget {
       {'ad': 'BA ZI', 'alt': 'Cin 4 sutun analizi', 'ikon': Icons.view_column, 'reng': Colors.brown},
       {'ad': 'KABBALAH', 'alt': 'Həyat agaci (Sefirot)', 'ikon': Icons.account_tree, 'reng': Colors.lightBlueAccent},
       {'ad': 'RUNES', 'alt': 'Elder Futhark (24 run)', 'ikon': Icons.text_fields, 'reng': Colors.pinkAccent},
+      {'ad': 'GUNLUK JURNAL', 'alt': 'Gunluk qeydler', 'ikon': Icons.book, 'reng': Colors.lightGreen},
+      {'ad': 'YUXU GUNDELIYI', 'alt': 'Yuxularinizi yazin', 'ikon': Icons.nightlight_round, 'reng': Colors.indigo},
+      {'ad': 'AFFIRMASIYALAR', 'alt': 'Gunun pozitiv sozleri', 'ikon': Icons.self_improvement, 'reng': Colors.amber},
     ];
 
     return Scaffold(
@@ -400,6 +404,9 @@ class EsasEkran extends StatelessWidget {
       const BaZi(),
       const Kabbalah(),
       const Runes(),
+      const Jurnal(),
+      const Yuxu(),
+      const Affirmasiyalar(),
     ];
     Navigator.push(ctx, MaterialPageRoute(builder: (_) => sehifeler[i]));
   }
