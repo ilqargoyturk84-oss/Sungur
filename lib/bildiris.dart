@@ -26,7 +26,7 @@ class BildirisServisi {
     );
   }
 
-  static Future<void> ləğvEt() async {
+  static Future<void> legvEt() async {
     await _plugin.cancelAll();
   }
 }
