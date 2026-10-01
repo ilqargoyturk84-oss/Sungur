@@ -1,5 +1,4 @@
 import 'huquq/senedler.dart';
-import 'bildiris.dart';
 import 'uc_sistem.dart';
 import 'bes_sistem.dart';
 import 'bati_astro.dart';
@@ -27,7 +26,6 @@ void main() async {
   ));
   final prefs = await SharedPreferences.getInstance();
   String? dil = prefs.getString('dil');
-  await BildirisServisi.baslat();
   runApp(SungurApp(baslangicDili: dil));
 }
 
