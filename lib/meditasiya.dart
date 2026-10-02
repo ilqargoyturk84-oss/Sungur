@@ -1,7 +1,6 @@
-import 'package:audioplayers/audioplayers.dart';
-import 'dart:async';
-import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
 
 class Meditasiya extends StatefulWidget {
@@ -9,6 +8,7 @@ class Meditasiya extends StatefulWidget {
   @override
   State<Meditasiya> createState() => _MeditasiyaState();
 }
+
 class _MeditasiyaState extends State<Meditasiya> {
   static const qara = Color(0xFF0A0A0A);
   static const tundQara = Color(0xFF1A0000);
@@ -21,15 +21,37 @@ class _MeditasiyaState extends State<Meditasiya> {
   int secilenDeqiqe = 5;
   final AudioPlayer _p = AudioPlayer();
 
+  void _bip() {
+    _p.play(AssetSource('sounds/beep.wav'));
+    HapticFeedback.heavyImpact();
+  }
+
   void basla() {
+    _bip();
     setState(() { isleyir = true; saniye = secilenDeqiqe * 60; });
     _t = Timer.periodic(const Duration(seconds: 1), (t) {
-      if (saniye <= 1) { t.cancel(); HapticFeedback.heavyImpact(); setState(() { isleyir = false; saniye = 0; }); }
-      else { setState(() { saniye--; }); }
+      if (saniye <= 1) {
+        t.cancel();
+        _bip();
+        Future.delayed(const Duration(milliseconds: 400), _bip);
+        Future.delayed(const Duration(milliseconds: 800), _bip);
+        setState(() { isleyir = false; saniye = 0; });
+      } else {
+        setState(() { saniye--; });
+      }
     });
   }
-  void dayandir() { _t?.cancel(); HapticFeedback.mediumImpact(); setState(() { isleyir = false; }); }
-  void sifirla() { _t?.cancel(); setState(() { isleyir = false; saniye = 0; }); }
+
+  void dayandir() {
+    _t?.cancel();
+    HapticFeedback.mediumImpact();
+    setState(() { isleyir = false; });
+  }
+
+  void sifirla() {
+    _t?.cancel();
+    setState(() { isleyir = false; saniye = 0; });
+  }
 
   String format(int s) {
     int d = s ~/ 60; int sn = s % 60;
