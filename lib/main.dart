@@ -325,7 +325,7 @@ class EsasEkran extends StatelessWidget {
           ),
         ],
       ),
-      body: UlduzluArxaFon(child: Column(
+      body: Column(
         children: [
           const SizedBox(height: 10),
           Text(L.t('tag'), style: const TextStyle(color: C.boz, fontSize: 12, letterSpacing: 2)),

@@ -79,7 +79,7 @@ class _UlduzluArxaFonState extends State<UlduzluArxaFon> with SingleTickerProvid
       Container(color: Reng.qara),
       Positioned.fill(child: AnimatedBuilder(
         animation: _c,
-        builder: (_, __) => CustomPaint(painter: _GöyPainter(_ulduzlar, _c.value)),
+        builder: (_, __) => CustomPaint(painter: _GoyPainter(_ulduzlar, _c.value)),
       )),
       widget.child,
     ]);
@@ -91,10 +91,10 @@ class _Ulduz {
   _Ulduz({required this.x, required this.y, required this.size, required this.tezlik, required this.gecikme});
 }
 
-class _GöyPainter extends CustomPainter {
+class _GoyPainter extends CustomPainter {
   final List<_Ulduz> ulduzlar;
   final double t;
-  _GöyPainter(this.ulduzlar, this.t);
+  _GoyPainter(this.ulduzlar, this.t);
 
   @override
   void paint(Canvas canvas, Size s) {
