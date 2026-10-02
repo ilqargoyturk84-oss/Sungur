@@ -414,6 +414,7 @@ class EsasEkran extends StatelessWidget {
       const Yuxu(),
       const Affirmasiyalar(),
       const Ensiklopediya(),
+      const Meditasiya(),
       const Haqqinda(),
     ];
     Navigator.push(ctx, MaterialPageRoute(builder: (_) => sehifeler[i]));
