@@ -1,6 +1,6 @@
-import 'content.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'main.dart';
 
 class StreakWidget extends StatefulWidget {
   const StreakWidget({super.key});
@@ -10,12 +10,8 @@ class StreakWidget extends StatefulWidget {
 
 class _StreakWidgetState extends State<StreakWidget> {
   int gun = 0;
-
   @override
-  void initState() {
-    super.initState();
-    _yukle();
-  }
+  void initState() { super.initState(); _yukle(); }
 
   Future<void> _yukle() async {
     final p = await SharedPreferences.getInstance();
@@ -24,13 +20,9 @@ class _StreakWidgetState extends State<StreakWidget> {
     String buGun = DateTime.now().toString().substring(0, 10);
     if (son != buGun) {
       if (son != null) {
-        DateTime sonD = DateTime.parse(son);
-        DateTime buD = DateTime.now();
-        int ferq = buD.difference(sonD).inDays;
+        int ferq = DateTime.now().difference(DateTime.parse(son)).inDays;
         s = (ferq == 1) ? s + 1 : 1;
-      } else {
-        s = 1;
-      }
+      } else { s = 1; }
       p.setString('son_tarix', buGun);
       p.setInt('streak', s);
     }
@@ -40,6 +32,7 @@ class _StreakWidgetState extends State<StreakWidget> {
   @override
   Widget build(BuildContext context) {
     if (gun == 0) return const SizedBox.shrink();
+    String m = L.kod == 'az' ? '$gun gunluk seriya!' : (L.kod == 'tr' ? '$gun günlük seri!' : '$gun day streak!');
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 14),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
@@ -51,7 +44,7 @@ class _StreakWidgetState extends State<StreakWidget> {
       child: Row(children: [
         const Text('\u{1F525}', style: TextStyle(fontSize: 26)),
         const SizedBox(width: 10),
-        Text('$gun gunluk seriya!', style: const TextStyle(color: Colors.orangeAccent, fontWeight: FontWeight.bold, fontSize: 14)),
+        Text(m, style: const TextStyle(color: Colors.orangeAccent, fontWeight: FontWeight.bold, fontSize: 14)),
       ]),
     );
   }

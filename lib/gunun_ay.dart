@@ -1,25 +1,19 @@
-import 'content.dart';
 import 'package:flutter/material.dart';
+import 'main.dart';
 
 class GununAy extends StatelessWidget {
   const GununAy({super.key});
-
-  static const qara = Color(0xFF0A0A0A);
-  static const tundQara = Color(0xFF1A0000);
-  static const qizil = Color(0xFFFFD700);
-  static const ag = Colors.white;
-
-  static const List<String> aylar = [
-    'Serateyn','Betn','Sureya','Debaran','Heqeh','Henneh','Zire','Nesre',
-    'Terfe','Cebhe','Zubra','Serfe','Ava','Simak','Gafr','Zubana','Iklil','Qelb',
-    'Sovle','Neayim','Belde','SedZabih','SedBula','SedSuud','SedAhbiye',
-    'FergMukdim','FergMuaxir','Risa'
-  ];
 
   @override
   Widget build(BuildContext context) {
     final now = DateTime.now();
     int idx = (now.day + now.month * 31 + now.year) % 28;
+    final az = ['Serateyn','Betn əl-Hut','Sureya','Debaran','Heqeh','Henneh','Zire','Nesre','Terfe','Cebhe','Zubra','Serfe','Ava','Simak','Gafr','Zubana','Iklil','Qelb','Sovle','Neayim','Belde','Sed əl-Zabih','Sed əl-Bula','Sed əs-Suud','Sed əl-Ahbiye','Ferğ əl-Mukdim','Ferğ əl-Muaxir','Risa'];
+    final tr = ['Şeretayn','Betn el-Hut','Süreyya','Debaran','Hekah','Henne','Zira','Nesre','Terfe','Cebhe','Zubra','Serfe','Ava','Simak','Gafr','Zubana','İklil','Kalp','Şevle','Neayim','Belde','Sad ez-Zabih','Sad el-Bula','Sad es-Suud','Sad el-Ahbiye','Ferğ el-Mukdim','Ferğ el-Muaxir','Rişa'];
+    final en = ['Sharatayn','Butayn','Thurayya','Dabaran','Haqah','Hanah','Dhira','Nathra','Tarfa','Jabhah','Zubrah','Sarfah','Awwa','Simak','Ghafr','Zubana','Iklil','Qalb','Shawla','Naim','Baldah','Sad al-Dhabih','Sad al-Bulah','Sad al-Suud','Sad al-Akhbiyah','Fargh al-Muqaddim','Fargh al-Muakhkhar','Risha'];
+    String m = L.kod == 'az' ? az[idx] : (L.kod == 'tr' ? tr[idx] : en[idx]);
+    String b = L.kod == 'az' ? 'GUNUN AY MENZILI' : (L.kod == 'tr' ? 'GÜNÜN AY MENZİLİ' : 'MOON MANSION');
+    String a = L.kod == 'az' ? 'Ay enerjisi bugun sizinle' : (L.kod == 'tr' ? 'Ay enerjisi bugün sizinle' : 'Moon energy is with you');
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 14),
       padding: const EdgeInsets.all(14),
@@ -32,10 +26,10 @@ class GununAy extends StatelessWidget {
         const Icon(Icons.nightlight_round, color: Colors.indigoAccent, size: 36),
         const SizedBox(width: 12),
         Expanded(child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          const Text('GUNUN AY MENZILI', style: TextStyle(color: Colors.indigoAccent, fontSize: 11, fontWeight: FontWeight.bold, letterSpacing: 1)),
+          Text(b, style: const TextStyle(color: Colors.indigoAccent, fontSize: 11, fontWeight: FontWeight.bold)),
           const SizedBox(height: 4),
-          Text(aylar[idx], style: const TextStyle(color: ag, fontSize: 16, fontWeight: FontWeight.bold)),
-          const Text('Ay enerjisi bugun sizinle', style: TextStyle(color: Colors.white70, fontSize: 12)),
+          Text(m, style: const TextStyle(color: Colors.white, fontSize: 16, fontWeight: FontWeight.bold)),
+          Text(a, style: const TextStyle(color: Colors.white70, fontSize: 12)),
         ])),
       ]),
     );
