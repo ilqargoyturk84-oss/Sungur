@@ -11,9 +11,9 @@ class Content {
   static const _remlEn = [['Via','Way','0.00'],['Populus','Crowd','+0.15'],['Acquisitio','Gain','+0.22'],['Laetitia','Joy','+0.28'],['Fortuna Major','Great fortune','+0.30'],['Conjunctio','Union','+0.18'],['Rubeus','Wrath','-0.18'],['Amissio','Loss','-0.25'],['Tristitia','Sorrow','-0.15'],['Carcer','Restriction','-0.22'],['Fortuna Minor','Lesser fortune','+0.15'],['Puer','Young power','+0.20'],['Puella','Harmony','+0.12'],['Albus','Purity','+0.10'],['Caput Draconis','New opportunity','+0.08'],['Cauda Draconis','Closure','-0.12']];
 
   static String cifrMena(int c) {
-    final az = {1:'Vahid, Liderlik',2:'Cutluk, Harmoniya',3:'Ucluk, Yaradiciliq',4:'Dordluk, Sabitlik',5:'Beslik, Deyisim',6:'Altiliq, Mesuliyyet',7:'Yeddilik, Meneviyyat',8:'Sekkizlik, Bolluq',9:'Doqquzluq, Kamillik'};
-    final en = {1:'Unity, Leadership',2:'Duality, Harmony',3:'Trinity, Creativity',4:'Stability, Patience',5:'Change, Freedom',6:'Responsibility, Family',7:'Spirituality, Wisdom',8:'Abundance, Success',9:'Completion, Perfection'};
-    return (az ? az[c] : en[c]) ?? '';
+    final _cifrAz = {1:'Vahid, Liderlik',2:'Cutluk, Harmoniya',3:'Ucluk, Yaradiciliq',4:'Dordluk, Sabitlik',5:'Beslik, Deyisim',6:'Altiliq, Mesuliyyet',7:'Yeddilik, Meneviyyat',8:'Sekkizlik, Bolluq',9:'Doqquzluq, Kamillik'};
+    final _cifrEn = {1:'Unity, Leadership',2:'Duality, Harmony',3:'Trinity, Creativity',4:'Stability, Patience',5:'Change, Freedom',6:'Responsibility, Family',7:'Spirituality, Wisdom',8:'Abundance, Success',9:'Completion, Perfection'};
+    return (az ? _cifrAz[c] : _cifrEn[c]) ?? '';
   }
 
   static String burc(String b) {
