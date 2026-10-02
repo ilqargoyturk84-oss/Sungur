@@ -1,3 +1,4 @@
+import 'package:vibration/vibration.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -18,11 +19,11 @@ class _MeditasiyaState extends State<Meditasiya> {
   Timer? _t;
   int secilenDeqiqe = 5;
 
-  void basla() {
-    HapticFeedback.heavyImpact();
+  void basla() async {
+    if (await Vibration.hasVibrator() ?? false) { Vibration.vibrate(duration: 500); }
     setState(() { isleyir = true; saniye = secilenDeqiqe * 60; });
     _t = Timer.periodic(const Duration(seconds: 1), (t) {
-      if (saniye <= 1) { t.cancel(); HapticFeedback.heavyImpact(); Future.delayed(const Duration(milliseconds: 300), () => HapticFeedback.heavyImpact()); Future.delayed(const Duration(milliseconds: 600), () => HapticFeedback.heavyImpact()); setState(() { isleyir = false; saniye = 0; }); }
+      if (saniye <= 1) { t.cancel(); Vibration.vibrate(pattern: [0, 500, 200, 500, 200, 500]); setState(() { isleyir = false; saniye = 0; }); }
       else { setState(() { saniye--; }); }
     });
   }
