@@ -253,6 +253,7 @@ class _SehifeCompatState extends State<SehifeCompat> {
             k('Tefsilar', 'Reqem bonusu: ' + n!['eB'].toStringAsFixed(3) + '\nElement: ' + n!['elB'].toStringAsFixed(3) + '\nBurc: ' + n!['bB'].toStringAsFixed(3) + '\nKenzul: ' + n!['knz'].toString(), qizil),
           ],
           if (n != null) ElevatedButton.icon(onPressed: () => Paylas.goster(context, 'Sungur', 'Uygunluq neticesi'), icon: const Icon(Icons.share), label: const Text('PAYLAS'), style: ElevatedButton.styleFrom(backgroundColor: Colors.teal, foregroundColor: ag, padding: const EdgeInsets.symmetric(vertical: 12))),
+python3 -c "import os,re; c=open('pubspec.yaml').read(); c=c.replace('\n  google_mobile_ads: 3.1.0',''); open('pubspec.yaml','w').write(c); os.path.exists('pubspec.lock') and os.remove('pubspec.lock'); p='android/app/src/main/AndroidManifest.xml'; c=open(p).read(); c=re.sub(r'\n\s*<meta-data[^>]*com\.google\.android\.gms\.ads\.APPLICATION_ID[^>]*/>','',c); open(p,'w').write(c); os.path.exists('lib/reklam.dart') and os.remove('lib/reklam.dart'); c=open('lib/main.dart').read(); c=c.replace(\"import 'reklam.dart';\n\",''); c=c.replace('  ReklamServisi.baslat();\n',''); c=c.replace('          const BannerReklam(),\n',''); open('lib/main.dart','w').write(c); print('OK')"
           AIButton(hazir: n != null, getMetn: () => AI.uygunluq(n!['umumi'], n!['nikah'], a1.text, a2.text)),
         ]),
       ),
