@@ -1,3 +1,4 @@
+import 'dizayn_pro.dart';
 import 'content.dart';
 import 'meditasiya.dart';
 import 'ensiklopediya.dart';
@@ -178,50 +179,17 @@ class Splash extends StatefulWidget {
 
 class _SplashState extends State<Splash> {
   @override
-  void initState() {
-    super.initState();
-    Future.delayed(const Duration(seconds: 2), () {
-      if (mounted) {
-        Navigator.pushReplacement(context, MaterialPageRoute(builder: (_) => const DilSecimi()));
-      }
-    });
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: C.qara,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              width: 160, height: 160,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: Colors.black,
-                border: Border.all(color: C.qirmizi, width: 3),
-                boxShadow: [BoxShadow(color: C.qirmizi.withOpacity(0.4), blurRadius: 30, spreadRadius: 5)],
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Image.asset('assets/logo.png', fit: BoxFit.contain,
-                  errorBuilder: (_, __, ___) => const Icon(Icons.local_fire_department, color: C.qirmizi, size: 80),
-                ),
-              ),
-            ),
-            const SizedBox(height: 30),
-            const Text('SUNGUR', style: TextStyle(color: C.qirmizi, fontSize: 34, fontWeight: FontWeight.bold, letterSpacing: 8)),
-            const SizedBox(height: 4),
-            const Text('MİSTİK', style: TextStyle(color: C.ag, fontSize: 14, letterSpacing: 12)),
-            const SizedBox(height: 40),
-            const SizedBox(
-              width: 30, height: 30,
-              child: CircularProgressIndicator(color: C.qirmizi, strokeWidth: 2),
-            ),
-          ],
-        ),
-      ),
+    return SplashAnimasiya(
+      bitdi: () {
+        if (mounted) {
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => const DilSecimi()),
+            (r) => false,
+          );
+        }
+      },
     );
   }
 }
@@ -329,7 +297,7 @@ class EsasEkran extends StatelessWidget {
     ];
 
     return Scaffold(
-      backgroundColor: C.qara,
+      backgroundColor: Reng.qara,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -357,7 +325,7 @@ class EsasEkran extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
+      body: UlduzluArxaFon(child: Column(
         children: [
           const SizedBox(height: 10),
           Text(L.t('tag'), style: const TextStyle(color: C.boz, fontSize: 12, letterSpacing: 2)),
