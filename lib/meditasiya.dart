@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -18,13 +19,14 @@ class _MeditasiyaState extends State<Meditasiya> {
   int secilenDeqiqe = 5;
 
   void basla() {
+    HapticFeedback.heavyImpact();
     setState(() { isleyir = true; saniye = secilenDeqiqe * 60; });
     _t = Timer.periodic(const Duration(seconds: 1), (t) {
-      if (saniye <= 1) { t.cancel(); setState(() { isleyir = false; saniye = 0; }); }
+      if (saniye <= 1) { t.cancel(); HapticFeedback.heavyImpact(); Future.delayed(const Duration(milliseconds: 300), () => HapticFeedback.heavyImpact()); Future.delayed(const Duration(milliseconds: 600), () => HapticFeedback.heavyImpact()); setState(() { isleyir = false; saniye = 0; }); }
       else { setState(() { saniye--; }); }
     });
   }
-  void dayandir() { _t?.cancel(); setState(() { isleyir = false; }); }
+  void dayandir() { _t?.cancel(); HapticFeedback.mediumImpact(); setState(() { isleyir = false; }); }
   void sifirla() { _t?.cancel(); setState(() { isleyir = false; saniye = 0; }); }
 
   String format(int s) {
