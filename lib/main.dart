@@ -1,3 +1,4 @@
+import 'ensiklopediya.dart';
 import 'huquq/senedler.dart';
 import 'uc_sistem.dart';
 import 'bes_sistem.dart';
@@ -323,6 +324,7 @@ class EsasEkran extends StatelessWidget {
       {'ad': 'GUNLUK JURNAL', 'alt': 'Gunluk qeydler', 'ikon': Icons.book, 'reng': Colors.lightGreen},
       {'ad': 'YUXU GUNDELIYI', 'alt': 'Yuxularinizi yazin', 'ikon': Icons.nightlight_round, 'reng': Colors.indigo},
       {'ad': 'AFFIRMASIYALAR', 'alt': 'Gunun pozitiv sozleri', 'ikon': Icons.self_improvement, 'reng': Colors.amber},
+      {'ad': 'ENSIKLOPEDIYA', 'alt': '50+ mistik meqale', 'ikon': Icons.library_books, 'reng': Colors.deepOrangeAccent},
       {'ad': 'HAQQINDA', 'alt': 'Tetbiq ve hüquqi melumat', 'ikon': Icons.info_outline, 'reng': Colors.blueGrey},
     ];
 
@@ -409,6 +411,7 @@ class EsasEkran extends StatelessWidget {
       const Jurnal(),
       const Yuxu(),
       const Affirmasiyalar(),
+      const Ensiklopediya(),
       const Haqqinda(),
     ];
     Navigator.push(ctx, MaterialPageRoute(builder: (_) => sehifeler[i]));
