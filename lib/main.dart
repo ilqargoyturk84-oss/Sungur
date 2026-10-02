@@ -314,9 +314,9 @@ class EsasEkran extends StatelessWidget {
       {'ad': L.t('position'), 'alt': L.t('position_d'), 'ikon': Icons.place, 'reng': C.qirmiziAcik},
       {'ad': L.t('reference'), 'alt': L.t('reference_d'), 'ikon': Icons.menu_book, 'reng': C.qizil},
       {'ad': 'CHATBOT', 'alt': 'Sungur AI ile sohbet', 'ikon': Icons.psychology, 'reng': Colors.purpleAccent},
-      {'ad': 'BATI ASTROLOJIYASI', 'alt': 'Dogum xeritesi (Birth Chart)', 'ikon': Icons.public, 'reng': Colors.orangeAccent},
-      {'ad': 'SINASTRİYA', 'alt': 'Iki xeritenin uygunlugu', 'ikon': Icons.compare_arrows, 'reng': Colors.teal},
-      {'ad': 'VEDIC ASTROLOGIYA', 'alt': 'Nakshatra sistemi', 'ikon': Icons.auto_awesome, 'reng': Colors.deepPurpleAccent},
+      {'ad': 'WESTERN ASTROLOGY', 'alt': 'Birth Chart', 'ikon': Icons.public, 'reng': Colors.orangeAccent},
+      {'ad': 'SYNASTRY', 'alt': 'Two charts compatibility', 'ikon': Icons.compare_arrows, 'reng': Colors.teal},
+      {'ad': 'VEDIC ASTROLOGY', 'alt': 'Nakshatra system', 'ikon': Icons.auto_awesome, 'reng': Colors.deepPurpleAccent},
       {'ad': 'BA ZI', 'alt': 'Cin 4 sutun analizi', 'ikon': Icons.view_column, 'reng': Colors.brown},
       {'ad': 'KABBALAH', 'alt': 'Həyat agaci (Sefirot)', 'ikon': Icons.account_tree, 'reng': Colors.lightBlueAccent},
       {'ad': 'RUNES', 'alt': 'Elder Futhark (24 run)', 'ikon': Icons.text_fields, 'reng': Colors.pinkAccent},
@@ -353,7 +353,7 @@ class EsasEkran extends StatelessWidget {
         actions: [
           IconButton(
             icon: const Icon(Icons.language, color: C.qirmizi),
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (_) => const DilSecimi())),
+            onPressed: () => Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (_) => const DilSecimi()), (r) => false),
           ),
         ],
       ),
