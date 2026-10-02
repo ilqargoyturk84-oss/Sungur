@@ -15,10 +15,10 @@ class _MeditasiyaState extends State<Meditasiya> {
   int saniye = 0;
   bool isleyir = false;
   Timer? _t;
-  int secilenDəqiqə = 5;
+  int secilenDeqiqe = 5;
 
   void basla() {
-    setState(() { isleyir = true; saniye = secilenDəqiqə * 60; });
+    setState(() { isleyir = true; saniye = secilenDeqiqe * 60; });
     _t = Timer.periodic(const Duration(seconds: 1), (t) {
       if (saniye <= 1) { t.cancel(); setState(() { isleyir = false; saniye = 0; }); }
       else { setState(() { saniye--; }); }
@@ -42,10 +42,10 @@ class _MeditasiyaState extends State<Meditasiya> {
         Container(width: 220, height: 220, decoration: BoxDecoration(shape: BoxShape.circle, color: tundQara, border: Border.all(color: qizil, width: 3)), child: Center(child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           const Icon(Icons.self_improvement, color: qizil, size: 40),
           const SizedBox(height: 10),
-          Text(saniye == 0 ? format(secilenDəqiqə * 60) : format(saniye), style: const TextStyle(color: ag, fontSize: 40, fontWeight: FontWeight.bold)),
+          Text(saniye == 0 ? format(secilenDeqiqe * 60) : format(saniye), style: const TextStyle(color: ag, fontSize: 40, fontWeight: FontWeight.bold)),
         ]))),
         const SizedBox(height: 30),
-        if (!isleyir && saniye == 0) Row(mainAxisAlignment: MainAxisAlignment.center, children: [3,5,10,15].map((d) => Padding(padding: const EdgeInsets.all(4), child: ChoiceChip(label: Text(d.toString() + ' deq', style: TextStyle(color: secilenDəqiqə == d ? qara : ag)), selected: secilenDəqiqə == d, onSelected: (_) => setState(() => secilenDəqiqə = d), selectedColor: qizil))).toList()),
+        if (!isleyir && saniye == 0) Row(mainAxisAlignment: MainAxisAlignment.center, children: [3,5,10,15].map((d) => Padding(padding: const EdgeInsets.all(4), child: ChoiceChip(label: Text(d.toString() + ' deq', style: TextStyle(color: secilenDeqiqe == d ? qara : ag)), selected: secilenDeqiqe == d, onSelected: (_) => setState(() => secilenDeqiqe = d), selectedColor: qizil))).toList()),
         const SizedBox(height: 20),
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           if (!isleyir) ElevatedButton.icon(onPressed: basla, icon: const Icon(Icons.play_arrow), label: const Text('BASLA'), style: ElevatedButton.styleFrom(backgroundColor: qizil, foregroundColor: qara, padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14))),
