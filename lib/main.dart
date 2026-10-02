@@ -1,3 +1,4 @@
+import 'meditasiya.dart';
 import 'ensiklopediya.dart';
 import 'huquq/senedler.dart';
 import 'uc_sistem.dart';
@@ -325,6 +326,7 @@ class EsasEkran extends StatelessWidget {
       {'ad': 'YUXU GUNDELIYI', 'alt': 'Yuxularinizi yazin', 'ikon': Icons.nightlight_round, 'reng': Colors.indigo},
       {'ad': 'AFFIRMASIYALAR', 'alt': 'Gunun pozitiv sozleri', 'ikon': Icons.self_improvement, 'reng': Colors.amber},
       {'ad': 'ENSIKLOPEDIYA', 'alt': '50+ mistik meqale', 'ikon': Icons.library_books, 'reng': Colors.deepOrangeAccent},
+      {'ad': 'MEDITASIYA', 'alt': 'Nefes ve fokus taymeri', 'ikon': Icons.spa, 'reng': Colors.tealAccent},
       {'ad': 'HAQQINDA', 'alt': 'Tetbiq ve hüquqi melumat', 'ikon': Icons.info_outline, 'reng': Colors.blueGrey},
     ];
 
