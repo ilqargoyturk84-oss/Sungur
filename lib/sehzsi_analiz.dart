@@ -1,3 +1,4 @@
+import 'content.dart';
 import 'package:flutter/material.dart';
 import 'ai_destek.dart';
 import 'paylas.dart';
@@ -241,18 +242,18 @@ class _SehifePersonalState extends State<SehifePersonal> {
           const SizedBox(height: 20),
           if (n != null) ...[
             k('Ad', n!['ad'], ag),
-            k('EBCED', n!['e'].toString() + '\n' + mE(n!['e']), qizil),
-            k('CIFR', n!['c'].toString() + ' - ' + cm[n!['c']]! + '\n' + mC(n!['c']), Colors.purpleAccent),
-            k('RUM', n!['r'].toString() + '\n' + mR(n!['r']), Colors.orangeAccent),
-            k('NUMEROLOGIYA', n!['p'].toString() + '\n' + mN(n!['p']), Colors.cyan),
-            k('BURC', n!['b']['ad'] + '\nPlanet: ' + n!['b']['p'] + '\nElement: ' + n!['b']['e'] + '\n' + mB(n!['b']['ad']), Colors.redAccent),
-            k('DEKANAT', n!['dk'], Colors.tealAccent),
-            k('AY MENZILI', n!['am'] + '\n' + mAm(n!['am']), Colors.indigoAccent),
-            k('HURUFILIK', n!['hu'] + '\n' + mHu(n!['hu']), Colors.pinkAccent),
-            k('VEFQ', n!['vf'] + '\n' + mV(n!['e']), Colors.deepOrangeAccent),
-            k('ISMI-EZEM', n!['ia'] + '\n' + mIa(n!['ia']), Colors.lightGreenAccent),
-            k('PLANET GUNU', n!['pg'], Colors.blueAccent),
-            k('CIN BURCU', n!['cb'], Colors.greenAccent),
+            k(Content.ebcad, n!['e'].toString() + '\n' + mE(n!['e']), qizil),
+            k(Content.cifr, n!['c'].toString() + ' - ' + Content.cifrMena(n!['c']) + '\n' + mC(n!['c']), Colors.purpleAccent),
+            k(Content.rum, n!['r'].toString() + '\n' + mR(n!['r']), Colors.orangeAccent),
+            k(Content.numer, n!['p'].toString() + '\n' + mN(n!['p']), Colors.cyan),
+            k(Content.burc, n!['b']['ad'] + '\nPlanet: ' + n!['b']['p'] + '\nElement: ' + n!['b']['e'] + '\n' + mB(n!['b']['ad']), Colors.redAccent),
+            k(Content.dekanat, n!['dk'], Colors.tealAccent),
+            k(Content.ayMenzili, n!['am'] + '\n' + mAm(n!['am']), Colors.indigoAccent),
+            k(Content.hurufi, n!['hu'] + '\n' + mHu(n!['hu']), Colors.pinkAccent),
+            k(Content.vefq, n!['vf'] + '\n' + mV(n!['e']), Colors.deepOrangeAccent),
+            k(Content.ismiAzam, n!['ia'] + '\n' + mIa(n!['ia']), Colors.lightGreenAccent),
+            k(Content.planetGunu, n!['pg'], Colors.blueAccent),
+            k(Content.cinBurcu, n!['cb'], Colors.greenAccent),
           ],
         ]),
       ),
