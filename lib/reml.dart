@@ -1,3 +1,4 @@
+import 'content.dart';
 import 'paylas.dart';
 import 'ai_destek.dart';
 import 'ai_widget.dart';
