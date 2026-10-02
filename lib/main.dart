@@ -317,15 +317,15 @@ class EsasEkran extends StatelessWidget {
       {'ad': 'WESTERN ASTROLOGY', 'alt': 'Birth Chart', 'ikon': Icons.public, 'reng': Colors.orangeAccent},
       {'ad': 'SYNASTRY', 'alt': 'Two charts compatibility', 'ikon': Icons.compare_arrows, 'reng': Colors.teal},
       {'ad': 'VEDIC ASTROLOGY', 'alt': 'Nakshatra system', 'ikon': Icons.auto_awesome, 'reng': Colors.deepPurpleAccent},
-      {'ad': 'BA ZI', 'alt': 'Cin 4 sutun analizi', 'ikon': Icons.view_column, 'reng': Colors.brown},
-      {'ad': 'KABBALAH', 'alt': 'Həyat agaci (Sefirot)', 'ikon': Icons.account_tree, 'reng': Colors.lightBlueAccent},
+      {'ad': 'BA ZI', 'alt': 'Chinese 4 pillars', 'ikon': Icons.view_column, 'reng': Colors.brown},
+      {'ad': 'KABBALAH', 'alt': 'Tree of Life (Sephiroth)', 'ikon': Icons.account_tree, 'reng': Colors.lightBlueAccent},
       {'ad': 'RUNES', 'alt': 'Elder Futhark (24 run)', 'ikon': Icons.text_fields, 'reng': Colors.pinkAccent},
-      {'ad': 'GUNLUK JURNAL', 'alt': 'Gunluk qeydler', 'ikon': Icons.book, 'reng': Colors.lightGreen},
-      {'ad': 'YUXU GUNDELIYI', 'alt': 'Yuxularinizi yazin', 'ikon': Icons.nightlight_round, 'reng': Colors.indigo},
-      {'ad': 'AFFIRMASIYALAR', 'alt': 'Gunun pozitiv sozleri', 'ikon': Icons.self_improvement, 'reng': Colors.amber},
-      {'ad': 'ENSIKLOPEDIYA', 'alt': '50+ mistik meqale', 'ikon': Icons.library_books, 'reng': Colors.deepOrangeAccent},
-      {'ad': 'MEDITASIYA', 'alt': 'Nefes ve fokus taymeri', 'ikon': Icons.spa, 'reng': Colors.tealAccent},
-      {'ad': 'HAQQINDA', 'alt': 'Tetbiq ve hüquqi melumat', 'ikon': Icons.info_outline, 'reng': Colors.blueGrey},
+      {'ad': 'DAILY JOURNAL', 'alt': 'Daily notes', 'ikon': Icons.book, 'reng': Colors.lightGreen},
+      {'ad': 'DREAM JOURNAL', 'alt': 'Write your dreams', 'ikon': Icons.nightlight_round, 'reng': Colors.indigo},
+      {'ad': 'AFFIRMATIONS', 'alt': 'Positive words', 'ikon': Icons.self_improvement, 'reng': Colors.amber},
+      {'ad': 'ENCYCLOPEDIA', 'alt': '50+ mystic articles', 'ikon': Icons.library_books, 'reng': Colors.deepOrangeAccent},
+      {'ad': 'MEDITATION', 'alt': 'Breath and focus timer', 'ikon': Icons.spa, 'reng': Colors.tealAccent},
+      {'ad': 'ABOUT', 'alt': 'App and legal info', 'ikon': Icons.info_outline, 'reng': Colors.blueGrey},
     ];
 
     return Scaffold(
