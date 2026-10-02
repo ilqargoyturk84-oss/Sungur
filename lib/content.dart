@@ -1,7 +1,7 @@
-import 'lang.dart';
 
 class Content {
-  static bool get _az => L.kod == 'az';
+  static String dil = 'az';
+  static bool get _az => dil == 'az';
 
   // === SEXSI ANALIZ ETIKETLERI ===
   static String get ad => _az ? 'Ad' : 'Name';

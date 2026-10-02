@@ -1,3 +1,4 @@
+import 'content.dart';
 import 'meditasiya.dart';
 import 'ensiklopediya.dart';
 import 'huquq/senedler.dart';
@@ -121,6 +122,7 @@ class L {
   static void set(String kod) {
     _k = kod;
     _c = _s[kod] ?? _s['az']!;
+    Content.dil = kod;
   }
 
   static String get kod => _k;
