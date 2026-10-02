@@ -27,9 +27,7 @@ void main() async {
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.light,
   ));
-  final prefs = await SharedPreferences.getInstance();
-  String? dil = prefs.getString('dil');
-  runApp(SungurApp(baslangicDili: dil));
+  runApp(const SungurApp(baslangicDili: 'en'));
 }
 
 class L {
@@ -232,8 +230,6 @@ class DilSecimi extends StatelessWidget {
   const DilSecimi({super.key});
 
   Future<void> _sec(BuildContext ctx, String kod) async {
-    final p = await SharedPreferences.getInstance();
-    await p.setString('dil', kod);
     L.set(kod);
     if (ctx.mounted) {
       Navigator.pushReplacement(ctx, MaterialPageRoute(builder: (_) => const EsasEkran()));
