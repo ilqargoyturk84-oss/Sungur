@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class _MeditasiyaState extends State<Meditasiya> {
   bool isleyir = false;
   Timer? _t;
   int secilenDeqiqe = 5;
+  final AudioPlayer _p = AudioPlayer();
 
   void basla() {
     setState(() { isleyir = true; saniye = secilenDeqiqe * 60; });
@@ -35,7 +37,7 @@ class _MeditasiyaState extends State<Meditasiya> {
   }
 
   @override
-  void dispose() { _t?.cancel(); super.dispose(); }
+  void dispose() { _t?.cancel(); _p.dispose(); super.dispose(); }
 
   @override
   Widget build(BuildContext context) {
